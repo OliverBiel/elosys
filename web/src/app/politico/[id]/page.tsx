@@ -21,6 +21,12 @@ import { PageHeader } from "@/components/shell/shell-context";
 import { YearSelect } from "@/components/ui/year-select";
 import { EmptyState } from "@/components/ui/empty-state";
 import { formatBRL, formatCnpj, formatCpf, resultTone } from "@/lib/format";
+import { getPersonVotesSummary } from "@/lib/votes-queries";
+import { HOUSE_LABEL } from "@/lib/vote-meaning";
+import { ParliamentarianKpis } from "@/components/votes/parliamentarian-kpis";
+import { ParliamentarianVotesTable } from "@/components/votes/parliamentarian-votes-table";
+import { parliamentarianHref } from "@/components/votes/parliamentarian-shared";
+import { SourcesList } from "@/components/votes/sources-list";
 
 const DISCOURSE_SHOWN = 8;
 
@@ -123,6 +129,10 @@ export default async function PoliticoPage({ params, searchParams }: PageProps<"
 
         <Suspense fallback={<SectionSkeleton id="emendas-parlamentares" title="emendas parlamentares" rows={2} />}>
           <EarmarksSection personId={person.id} />
+        </Suspense>
+
+        <Suspense fallback={<SectionSkeleton id="como-votou" title="como votou no plenário" rows={3} />}>
+          <VotesSection personId={person.id} />
         </Suspense>
 
         <Suspense fallback={<NetworkSkeleton />}>
@@ -365,6 +375,49 @@ async function EarmarksSection({ personId }: { personId: number }) {
             </tbody>
           </table>
         </div>
+      </div>
+    </Section>
+  );
+}
+
+const RECENT_VOTES = 10;
+
+async function VotesSection({ personId }: { personId: number }) {
+  const { camara, senado } = getPersonVotesSummary(personId, { includeVotes: true });
+  const blocks = [...camara, ...senado].filter((s) => s.votes.length > 0);
+  if (blocks.length === 0) return null;
+  return (
+    <Section id="como-votou" title="como votou no plenário">
+      <p className="mb-4 text-[11.5px] text-[var(--muted-2)]">
+        Votações nominais de mérito no Plenário (2019–2026), sem os requerimentos de procedimento.
+        Ligação pela ficha da Câmara/Senado (CPF ou nome + nascimento) com esta pessoa do TSE.
+      </p>
+      <div className="flex flex-col gap-10">
+        {blocks.map((s) => {
+          const { house, id, name } = s.identity;
+          return (
+            <div key={`${house}-${id}`} className="flex flex-col gap-4">
+              <SourceZone provenance={s.sourcesBySection.identity[0] ?? s.identity.provenance}>
+                <div className="label">
+                  {HOUSE_LABEL[house]} · {name ?? `parlamentar ${id}`}
+                  {s.identity.matchBasis ? ` · vínculo: ${s.identity.matchBasis}` : ""}
+                </div>
+              </SourceZone>
+              {/* Multi-year aggregates: every file is listed; each table row cites its own. */}
+              <ParliamentarianKpis house={house} summary={s} />
+              <SourcesList sources={s.sources} label="fontes deste resumo" />
+              <div>
+                <div className="label mb-2">
+                  {Math.min(RECENT_VOTES, s.votes.length)} votações de mérito mais recentes
+                </div>
+                <ParliamentarianVotesTable house={house} rows={s.votes.slice(0, RECENT_VOTES)} compact />
+              </div>
+              <Link href={parliamentarianHref(house, id)} className="mono-label hover:text-[var(--accent-2)]">
+                ver todas as {s.votes.length.toLocaleString("pt-BR")} votações, com filtros{house === "camara" ? " por ano e tema" : " por ano"} →
+              </Link>
+            </div>
+          );
+        })}
       </div>
     </Section>
   );

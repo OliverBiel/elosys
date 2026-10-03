@@ -1,0 +1,989 @@
+{
+  "parser_version": "1.1+kind1.4",
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "api_votes_seen": 1143,
+  "votes": 1142,
+  "casts": 92392,
+  "votes_per_year": {
+    "2019": 132,
+    "2020": 193,
+    "2021": 225,
+    "2022": 169,
+    "2023": 141,
+    "2024": 95,
+    "2025": 128,
+    "2026": 59
+  },
+  "votes_per_month": {
+    "2019-02": 4,
+    "2019-03": 5,
+    "2019-04": 9,
+    "2019-05": 4,
+    "2019-06": 19,
+    "2019-07": 8,
+    "2019-08": 13,
+    "2019-09": 17,
+    "2019-10": 30,
+    "2019-11": 11,
+    "2019-12": 12,
+    "2020-02": 1,
+    "2020-03": 6,
+    "2020-04": 16,
+    "2020-05": 27,
+    "2020-06": 22,
+    "2020-07": 13,
+    "2020-08": 10,
+    "2020-09": 48,
+    "2020-10": 26,
+    "2020-11": 7,
+    "2020-12": 17,
+    "2021-02": 6,
+    "2021-03": 19,
+    "2021-04": 12,
+    "2021-05": 13,
+    "2021-06": 19,
+    "2021-07": 36,
+    "2021-08": 17,
+    "2021-09": 18,
+    "2021-10": 10,
+    "2021-11": 32,
+    "2021-12": 43,
+    "2022-02": 5,
+    "2022-03": 11,
+    "2022-04": 41,
+    "2022-05": 35,
+    "2022-06": 27,
+    "2022-07": 2,
+    "2022-08": 7,
+    "2022-10": 2,
+    "2022-11": 25,
+    "2022-12": 14,
+    "2023-02": 1,
+    "2023-03": 1,
+    "2023-04": 1,
+    "2023-05": 27,
+    "2023-06": 13,
+    "2023-07": 14,
+    "2023-08": 14,
+    "2023-09": 13,
+    "2023-10": 10,
+    "2023-11": 13,
+    "2023-12": 34,
+    "2024-02": 2,
+    "2024-03": 3,
+    "2024-04": 4,
+    "2024-05": 9,
+    "2024-06": 9,
+    "2024-07": 14,
+    "2024-08": 11,
+    "2024-09": 1,
+    "2024-10": 1,
+    "2024-11": 6,
+    "2024-12": 35,
+    "2025-02": 1,
+    "2025-03": 4,
+    "2025-04": 5,
+    "2025-05": 16,
+    "2025-06": 10,
+    "2025-07": 12,
+    "2025-08": 41,
+    "2025-09": 8,
+    "2025-10": 3,
+    "2025-11": 12,
+    "2025-12": 16,
+    "2026-02": 3,
+    "2026-03": 3,
+    "2026-04": 29,
+    "2026-05": 10,
+    "2026-06": 4,
+    "2026-07": 5,
+    "2026-08": 3,
+    "2026-09": 2
+  },
+  "secret_votes": 557,
+  "filter": {
+    "rule": "casaSessao == 'SF' AND siglaTipoSessao IN ['DEX', 'DOR', 'SDR'] AND votos not empty",
+    "dropped": {
+      "no_votos": 1
+    },
+    "dropped_list": [
+      {
+        "senate_vote_code": 5981,
+        "date": "2019-06-26",
+        "session_type": "DOR",
+        "identification": "PLC 27/2017",
+        "reason": "no_votos"
+      }
+    ],
+    "by_body": {
+      "dropped_body_NULL": 1,
+      "kept_body_CCJ": 1,
+      "kept_body_NULL": 132,
+      "kept_body_PLEN": 1009
+    },
+    "kept_with_body_not_PLEN": 133
+  },
+  "casts_by_vote": {
+    "yes": 32204,
+    "secret": 28986,
+    "present_not_voted": 12790,
+    "absent_justified": 8662,
+    "no": 7676,
+    "absent": 1235,
+    "presiding": 675,
+    "abstention": 91,
+    "other": 69,
+    "obstruction": 4
+  },
+  "p_nrv_entries": 12790,
+  "votes_listing_only_voters": [
+    {
+      "senate_vote_code": 5957,
+      "date": "2019-04-16",
+      "casts": 52
+    },
+    {
+      "senate_vote_code": 5958,
+      "date": "2019-04-23",
+      "casts": 68
+    },
+    {
+      "senate_vote_code": 5959,
+      "date": "2019-04-23",
+      "casts": 66
+    }
+  ],
+  "votes_with_more_than_81": [
+    {
+      "senate_vote_code": 5999,
+      "date": "2019-08-14",
+      "casts": 82
+    }
+  ],
+  "casts_rejected": {},
+  "vote_codes": {
+    "Sim": 32204,
+    "Votou": 28986,
+    "P-NRV": 12790,
+    "Não": 7676,
+    "AP": 5389,
+    "LS": 1766,
+    "NCom": 1235,
+    "MIS": 1205,
+    "Presidente (art. 51 RISF)": 675,
+    "LP": 242,
+    "Abstenção": 91,
+    "NA": 64,
+    "LG": 59,
+    "MERC": 5,
+    "P-OD": 4,
+    "LAP": 1
+  },
+  "unknown_vote_codes": {
+    "NA": {
+      "casts": 64,
+      "api_description": [
+        "Dispositivo não citado"
+      ]
+    },
+    "MERC": {
+      "casts": 5,
+      "api_description": []
+    }
+  },
+  "kinds": {
+    "classifier_version": "1.4",
+    "total": 1142,
+    "with_meaning": 1041,
+    "with_meaning_pct": 91.2,
+    "by_kind": {
+      "nomination": 551,
+      "other": 94,
+      "pec_turn": 120,
+      "amendment": 106,
+      "merito": 221,
+      "highlight": 30,
+      "procedural": 20
+    },
+    "by_basis": {
+      "senate_nomination": 461,
+      "no_rule": 91,
+      "senate_pec_turn": 118,
+      "senate_amendment": 3,
+      "senate_substitute_amendment": 46,
+      "senate_main_text": 161,
+      "senate_highlighted_amendment": 102,
+      "senate_highlighted_text": 25,
+      "senate_pec_turn_other_object": 1,
+      "senate_chamber_substitute": 14,
+      "senate_highlight_on_chamber_substitute": 5,
+      "senate_request": 20,
+      "senate_secret_msf_ofs": 90,
+      "senate_pec_turn_unknown": 1,
+      "senate_multiple_projects": 3,
+      "senate_highlighted_amendment_passage": 1
+    }
+  },
+  "count_check": {
+    "secret_votes_checked": 557,
+    "mismatches": [],
+    "open_votes_totals_not_published": 585,
+    "note": "Open votes have totalVotosSim/Nao/Abstencao NULL in the API (stored NULL, never 0); their counts come from votos[]. Secret votes: sum(totals) vs 'Votou' casts."
+  },
+  "sve_sequence": {
+    "2019": {
+      "with_sequence": 125,
+      "min": 2023,
+      "max": 3531,
+      "numbers_not_in_api": 1384
+    },
+    "2020": {
+      "with_sequence": 16,
+      "min": 3533,
+      "max": 3551,
+      "numbers_not_in_api": 3
+    },
+    "2021": {
+      "with_sequence": 176,
+      "min": 3552,
+      "max": 3787,
+      "numbers_not_in_api": 60
+    },
+    "2022": {
+      "with_sequence": 169,
+      "min": 3790,
+      "max": 3993,
+      "numbers_not_in_api": 35
+    },
+    "2023": {
+      "with_sequence": 135,
+      "min": 3995,
+      "max": 4139,
+      "numbers_not_in_api": 10
+    },
+    "2024": {
+      "with_sequence": 94,
+      "min": 4140,
+      "max": 4233,
+      "numbers_not_in_api": 0
+    },
+    "2025": {
+      "with_sequence": 125,
+      "min": 4234,
+      "max": 4359,
+      "numbers_not_in_api": 1
+    },
+    "2026": {
+      "with_sequence": 59,
+      "min": 4360,
+      "max": 4419,
+      "numbers_not_in_api": 1
+    }
+  },
+  "senators": {
+    "total": 153,
+    "matched": 153,
+    "match_rate_pct": 100.0,
+    "unmatched_by_reason": {},
+    "unmatched_list": []
+  },
+  "orientations": {
+    "panel_votes_seen": 961,
+    "link": {
+      "no_stored_vote": 7,
+      "sequencial": 862,
+      "placar": 41,
+      "congress_session": 49,
+      "ambiguous_tally": 2
+    },
+    "orientation_rows_rejected": {},
+    "orientation_rows": 5898,
+    "orientation_rows_unlinked_not_inserted": 651,
+    "unlinked_panel_votes": [
+      {
+        "panel_vote_code": 2420,
+        "sequence": 2420,
+        "at": "2019-02-06T16:08:13",
+        "matter": "Eleição dos demais membros da Mesa (Chapa Única)",
+        "session": "Reunião Preparatória(Eleição e posse demais membros da Mesa)",
+        "orientations": 0,
+        "reason": "no_stored_vote"
+      },
+      {
+        "panel_vote_code": 2435,
+        "sequence": 2435,
+        "at": "2019-02-12T17:16:32",
+        "matter": "Requerimento retirada de pauta do item 9 da pauta",
+        "session": "Sessão Deliberativa Ordinária, às 14 horas",
+        "orientations": 13,
+        "reason": "no_stored_vote"
+      },
+      {
+        "panel_vote_code": 2659,
+        "sequence": 2659,
+        "at": "2019-04-10T20:17:27",
+        "matter": "Requerimento nº 80, de 2019 (Verificação)",
+        "session": "Sessão Deliberativa Ordinária, às 14 horas",
+        "orientations": 10,
+        "reason": "no_stored_vote"
+      },
+      {
+        "panel_vote_code": 2979,
+        "sequence": 2979,
+        "at": "2019-06-26T20:10:35",
+        "matter": "Arts. 8º e 9º do Projeto de Lei da Câmara nº 27, de 2017, destacados",
+        "session": "Sessão Deliberativa Ordinária, às 14 horas",
+        "orientations": 0,
+        "reason": "no_stored_vote"
+      },
+      {
+        "panel_vote_code": 3208,
+        "sequence": 3208,
+        "at": "2019-10-02T00:04:33",
+        "matter": "Suspensão da Sessão",
+        "session": "Sessão Deliberativa Ordinária, às 14 horas",
+        "orientations": 0,
+        "reason": "no_stored_vote"
+      },
+      {
+        "panel_vote_code": 2720,
+        "sequence": 3534,
+        "at": "2020-10-07T18:22:39",
+        "matter": "Pergunta 2, de 2020 (MODO TESTE)",
+        "session": "TESTES DO SISTEMA DE VOTAÇÃO - PLENÁRIO - 21/9/2020",
+        "orientations": 0,
+        "reason": "no_stored_vote"
+      },
+      {
+        "panel_vote_code": 4537,
+        "sequence": 3535,
+        "at": "2020-11-04T16:36:15",
+        "matter": "Votação em globo dos Vetos nºs 26/2020 (itens 13 a 24) e 33/2020 (item 3)",
+        "session": "Sessão Deliberativa Remota do CN no SF, às 16h",
+        "orientations": 17,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 4536,
+        "sequence": 3536,
+        "at": "2020-11-04T17:11:24",
+        "matter": "Veto nº 13, de 2020",
+        "session": "Sessão Deliberativa Remota do CN no SF, às 16h",
+        "orientations": 16,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 4790,
+        "sequence": 3557,
+        "at": "2021-03-03T21:58:21",
+        "matter": "Emenda nº 179 - PLEN à Proposta de Emenda à Constituição nº 186, de 2019 , destacada",
+        "session": "Sessão Deliberativa Ordinária, às 16 horas",
+        "orientations": 18,
+        "reason": "ambiguous_tally"
+      },
+      {
+        "panel_vote_code": 4799,
+        "sequence": 3561,
+        "at": "2021-03-03T22:57:19",
+        "matter": "Emenda nº 105 - PLEN à Proposta de Emenda a Constituição nº 186, de 2019 , destacada",
+        "session": "Sessão Deliberativa Ordinária, às 16 horas",
+        "orientations": 19,
+        "reason": "ambiguous_tally"
+      },
+      {
+        "panel_vote_code": 4880,
+        "sequence": 3571,
+        "at": "2021-03-17T17:58:12",
+        "matter": "Votação em Globo dos Vetos nºs 43/2020, 47/2020 (itens  001, 003 a 025), 58/2020 e 2/2021 (item 002)",
+        "session": "Sessão Deliberativa Remota do CN no SF, às 16h",
+        "orientations": 18,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 4882,
+        "sequence": 3572,
+        "at": "2021-03-17T18:12:35",
+        "matter": "Votação em Globo dos Vetos nº s 47/2020, 56/2020 e 2/2021 (item 001)",
+        "session": "Sessão Deliberativa Remota do CN no SF, às 16h",
+        "orientations": 17,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 4883,
+        "sequence": 3573,
+        "at": "2021-03-17T18:30:34",
+        "matter": "Veto nº 51, de 2020",
+        "session": "Sessão Deliberativa Remota do CN no SF, às 16h",
+        "orientations": 17,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 4879,
+        "sequence": 3574,
+        "at": "2021-03-17T18:50:30",
+        "matter": "Votação em Globo dos Vetos nºs 36,44,48,52,57 e 59 de 2020, Vetos nºs 3 e 5, de 2021",
+        "session": "Sessão Deliberativa Remota do CN no SF, às 16h",
+        "orientations": 18,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 4888,
+        "sequence": 3575,
+        "at": "2021-03-25T21:44:11",
+        "matter": "Substitutivo do Relator ao Projeto de Lei do Congresso Nacional nº 28, de 2020",
+        "session": "Sessão Deliberativa Remota do CN no SF, às 18h",
+        "orientations": 18,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 5045,
+        "sequence": 3586,
+        "at": "2021-04-19T19:57:47",
+        "matter": "Votação em Globo dos Vetos nºs 56/2019 (itens 001 a 011 e 020 a 024), 1/2021 e 8/2009 (item 007)",
+        "session": "Sessão Deliberativa Remota do CN no SF, às 16 horas",
+        "orientations": 8,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 5039,
+        "sequence": 3587,
+        "at": "2021-04-19T20:10:05",
+        "matter": "Veto nº 6, de 2021",
+        "session": "Sessão Deliberativa Remota do CN no SF, às 16 horas",
+        "orientations": 13,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 5331,
+        "sequence": 3604,
+        "at": "2021-06-01T17:27:07",
+        "matter": "Votação em Globo dos Vetos, nos termos do Acordo de Lideranças, para rejeição",
+        "session": "Sessão Deliberativa Remota do CN no SF, às 16 horas",
+        "orientations": 22,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 5323,
+        "sequence": 3605,
+        "at": "2021-06-01T17:41:23",
+        "matter": "Votação em Globo dos Vetos, nos termos do Acordo de Lideranças, para manutenção",
+        "session": "Sessão Deliberativa Remota do CN no SF, às 16 horas",
+        "orientations": 22,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 5570,
+        "sequence": 3661,
+        "at": "2021-07-15T17:22:21",
+        "matter": "Substitutivo, com complementação de voto, ao  PLN nº 3, de 2021, nos termos do Parecer",
+        "session": "Sessão Deliberativa Remota do CN no SF, às 16 horas",
+        "orientations": 14,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 5949,
+        "sequence": 3689,
+        "at": "2021-09-27T18:15:21",
+        "matter": "Vetos nºs 29/2021 (item 7), 30/2021, 32/2021, 34/2021, 38/2021, 40/2021, 42/2021",
+        "session": "Sessão Deliberativa Semipresencial do CN no SF, às 16 horas ",
+        "orientations": 12,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 5950,
+        "sequence": 3690,
+        "at": "2021-09-27T18:41:54",
+        "matter": "Vetos nºs 22/2021, 26/2021, 35/2021, 43/2021 (itens 1 a 5 e 7)",
+        "session": "Sessão Deliberativa Semipresencial do CN no SF, às 16 horas ",
+        "orientations": 11,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 5951,
+        "sequence": 3691,
+        "at": "2021-09-27T18:52:26",
+        "matter": "Vetos nºs 39/2021, 43/2021 (itens 8 a 24)",
+        "session": "Sessão Deliberativa Semipresencial do CN no SF, às 16 horas ",
+        "orientations": 13,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 5955,
+        "sequence": 3692,
+        "at": "2021-09-27T19:10:16",
+        "matter": "Veto nº 43, de 2021 (item 6)",
+        "session": "Sessão Deliberativa Semipresencial do CN no SF, às 16 horas ",
+        "orientations": 13,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 5956,
+        "sequence": 3693,
+        "at": "2021-09-27T19:26:14",
+        "matter": "Veto nº 47, de 2021",
+        "session": "Sessão Deliberativa Semipresencial do CN no SF, às 16 horas ",
+        "orientations": 14,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 5957,
+        "sequence": 3694,
+        "at": "2021-09-27T20:00:55",
+        "matter": "Veto nº 49, de 2021",
+        "session": "Sessão Deliberativa Semipresencial do CN no SF, às 16 horas ",
+        "orientations": 15,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 6343,
+        "sequence": 3724,
+        "at": "2021-11-29T21:03:18",
+        "matter": "Substitutivo ao Projeto de Resolução do Congresso Nacional nº 4, de 2021",
+        "session": "Sessão Deliberativa Semipresencial do CN no SF, às 16 horas",
+        "orientations": 10,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 6506,
+        "sequence": 3784,
+        "at": "2021-12-17T15:26:08",
+        "matter": "Dispositivo 6 do Veto nº 44 de 2021, destacado",
+        "session": "Sessão Deliberativa Semipresencial do CN no SF, às 14 horas",
+        "orientations": 15,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 6507,
+        "sequence": 3785,
+        "at": "2021-12-17T16:29:48",
+        "matter": "Vetos nºs 23, 27, 28, 44 (dispositivos 8, 20, 21, 30, 32 a 35, 39, 40, 41), 51 e 64 de 2021",
+        "session": "Sessão Deliberativa Semipresencial do CN no SF, às 14 horas",
+        "orientations": 9,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 6502,
+        "sequence": 3786,
+        "at": "2021-12-17T16:41:33",
+        "matter": "Veto nº 54 de 2021",
+        "session": "Sessão Deliberativa Semipresencial do CN no SF, às 14 horas",
+        "orientations": 6,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 6516,
+        "sequence": 3788,
+        "at": "2021-12-21T20:52:57",
+        "matter": "Projeto de Lei do Congresso Nacional nº 19, de 2021, na forma do substitutivo",
+        "session": "Sessão Deliberativa Semipresencial do CN no SF",
+        "orientations": 15,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 6529,
+        "sequence": 3789,
+        "at": "2022-02-08T18:29:49",
+        "matter": "Veto nº 41, de 2021",
+        "session": "Sessão Conjunta do Congresso Nacional, às 16 horas",
+        "orientations": 5,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 6701,
+        "sequence": 3800,
+        "at": "2022-03-10T17:54:45",
+        "matter": "Veto nº 8, de 2022",
+        "session": "6ª Sessão Conjunta do Congresso Nacional, às 16 horas",
+        "orientations": 19,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 6700,
+        "sequence": 3801,
+        "at": "2022-03-10T19:23:37",
+        "matter": "Veto nº 59, de 2022",
+        "session": "6ª Sessão Conjunta do Congresso Nacional, às 16 horas",
+        "orientations": 0,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 6748,
+        "sequence": 3804,
+        "at": "2022-03-17T18:02:11",
+        "matter": "Veto nº 19, de 2021 (todos os dispositivos)",
+        "session": "Sessão Conjunta do Congresso Nacional, às 14 horas",
+        "orientations": 6,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 6763,
+        "sequence": 3805,
+        "at": "2022-03-17T18:29:34",
+        "matter": "Veto nº 6, de 2022",
+        "session": "Sessão Conjunta do Congresso Nacional, às 14 horas",
+        "orientations": 2,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 6791,
+        "sequence": 3806,
+        "at": "2022-03-17T18:50:23",
+        "matter": "Veto nº 10, de 2022 (dispositivos 5 a 13)",
+        "session": "Sessão Conjunta do Congresso Nacional, às 14 horas",
+        "orientations": 5,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 6764,
+        "sequence": 3807,
+        "at": "2022-03-17T19:20:56",
+        "matter": "Veto nº 7, de 2022 (dispositivo único)",
+        "session": "Sessão Conjunta do Congresso Nacional, às 14 horas",
+        "orientations": 5,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 6784,
+        "sequence": 3808,
+        "at": "2022-03-17T19:47:19",
+        "matter": "Veto nº 73, de 2021 (dispositivo único)",
+        "session": "Sessão Conjunta do Congresso Nacional, às 14 horas",
+        "orientations": 7,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 6888,
+        "sequence": 3857,
+        "at": "2022-04-06T17:02:47",
+        "matter": "Mensagem nº 86, de 2021 - Renato Dias de Brito Gomes (Banco Central do Brasil)",
+        "session": "30ª Sessão Deliberativa Ordinária, às 16 horas",
+        "orientations": 0,
+        "reason": "no_stored_vote"
+      },
+      {
+        "panel_vote_code": 7070,
+        "sequence": 3872,
+        "at": "2022-04-28T15:04:19",
+        "matter": "Veto nº 11, de 2022 (dispositivos 194 e 199)",
+        "session": "Sessão Conjunta do Congresso Nacional, às 10 horas",
+        "orientations": 21,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 7105,
+        "sequence": 3873,
+        "at": "2022-04-28T15:37:54",
+        "matter": "Veto nº 36, de 2021 (dispositivos 9 e 10)",
+        "session": "Sessão Conjunta do Congresso Nacional, às 10 horas",
+        "orientations": 5,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 7609,
+        "sequence": 3936,
+        "at": "2022-07-05T19:51:17",
+        "matter": "Vetos com Acordo pela Manutenção - início no Senado Federal",
+        "session": "Sessão Conjunta do Congresso Nacional, às 14 horas",
+        "orientations": 21,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 7620,
+        "sequence": 3937,
+        "at": "2022-07-05T20:39:32",
+        "matter": "Vetos com Acordo pela Rejeição - início na Câmara dos Deputados",
+        "session": "Sessão Conjunta do Congresso Nacional, às 14 horas",
+        "orientations": 21,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 7612,
+        "sequence": 3938,
+        "at": "2022-07-05T21:04:49",
+        "matter": "Vetos com Acordo pela Rejeição - início no Senado Federal",
+        "session": "Sessão Conjunta do Congresso Nacional, às 14 horas",
+        "orientations": 21,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 7619,
+        "sequence": 3939,
+        "at": "2022-07-05T21:51:07",
+        "matter": "Veto nº 29, de 2022 (dispositivos 5 a 8)",
+        "session": "Sessão Conjunta do Congresso Nacional, às 14 horas",
+        "orientations": 20,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 7671,
+        "sequence": 3941,
+        "at": "2022-07-12T12:09:36",
+        "matter": "Substitutivo com adendo de plenário ao PLN nº 5, de 2022, ressalvados os destaques",
+        "session": "Sessão Conjunta do Congresso Nacional, às 10 horas",
+        "orientations": 9,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 7674,
+        "sequence": 3942,
+        "at": "2022-07-12T13:01:51",
+        "matter": "Destaque do União Brasil do Senado Federal à emenda  40860018",
+        "session": "Sessão Conjunta do Congresso Nacional, às 10 horas",
+        "orientations": 6,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 8212,
+        "sequence": 3986,
+        "at": "2022-12-16T11:43:00",
+        "matter": "Substitutivo do Relator de Plenário ao PRN nº 3/2022, ressalvadas as Emendas destacadas",
+        "session": "Sessão Conjunta do Congresso Nacional, às 10 horas",
+        "orientations": 13,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 8206,
+        "sequence": 3987,
+        "at": "2022-12-16T13:13:12",
+        "matter": "Veto nº 55, de 2022",
+        "session": "Sessão Conjunta do Congresso Nacional, às 10 horas",
+        "orientations": 6,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 8301,
+        "sequence": 3994,
+        "at": "2022-12-22T13:55:14",
+        "matter": "Vetos com acordo pela rejeição",
+        "session": "Sessão Conjunta do Congresso Nacional, às 12 horas",
+        "orientations": 8,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 8563,
+        "sequence": 3998,
+        "at": "2023-04-26T16:39:21",
+        "matter": "Veto nº 61, de 2022 (dispositivo único)",
+        "session": "Sessão Conjunta do Congresso Nacional, às 12 horas",
+        "orientations": 17,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 9597,
+        "sequence": 4133,
+        "at": "2023-12-14T14:46:05",
+        "matter": "Veto nº 38, de 2023",
+        "session": "Sessão Conjunta do Congresso Nacional, às 10 horas",
+        "orientations": 9,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 9592,
+        "sequence": 4134,
+        "at": "2023-12-14T16:05:00",
+        "matter": "Veto nº 30, de 2023 (dispositivos 1 a 20, 23 a 40, 44, 46 e 47)",
+        "session": "Sessão Conjunta do Congresso Nacional, às 10 horas",
+        "orientations": 10,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 9611,
+        "sequence": 4135,
+        "at": "2023-12-14T16:55:15",
+        "matter": "Vetos Parciais nº 23/2023 (dispositivo 2) e nº 27/2023 (dispositivos 21 a 24)",
+        "session": "Sessão Conjunta do Congresso Nacional, às 10 horas",
+        "orientations": 3,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 9650,
+        "sequence": 4136,
+        "at": "2023-12-19T14:50:47",
+        "matter": "Substitutivo ao Projeto de Lei do Congresso Nacional nº 4, de 2023, ressalvados os destaques",
+        "session": "Sessão Conjunta do Congresso Nacional, às 12 horas",
+        "orientations": 7,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 9660,
+        "sequence": 4137,
+        "at": "2023-12-19T16:06:58",
+        "matter": "Emenda nº 30880002 ao Projeto de Lei do Congresso Nacional nº 4, de 2023, destacada",
+        "session": "Sessão Conjunta do Congresso Nacional, às 12 horas",
+        "orientations": 11,
+        "reason": "congress_session"
+      },
+      {
+        "panel_vote_code": 10867,
+        "sequence": 4237,
+        "at": "2025-03-13T15:10:17",
+        "matter": "Projeto de Resolução do Congresso Nacional nº  1, de 2025, nos termos do parecer",
+        "session": "3ª Sessão Conjunta do Congresso Nacional, às 10 horas",
+        "orientations": 1,
+        "reason": "congress_session"
+      }
+    ],
+    "labels_by_kind": {
+      "government": {
+        "Governo": 323
+      },
+      "majority": {
+        "Maioria": 125
+      },
+      "minority": {
+        "Minoria": 243
+      },
+      "opposition": {
+        "Oposição": 235
+      },
+      "other": {
+        "Banc Fem": 217,
+        "B.Feminina": 3
+      },
+      "party": {
+        "PT": 399,
+        "PSD": 375,
+        "MDB": 367,
+        "PL": 365,
+        "Podemos": 348,
+        "PSDB": 320,
+        "Republica": 316,
+        "PDT": 271,
+        "PSB": 236,
+        "PROS": 200,
+        "REDE": 197,
+        "UNIÃO": 197,
+        "PROGRES": 186,
+        "DEM": 171,
+        "Cidadania": 162,
+        "PP": 146,
+        "PSL": 146,
+        "PSC": 134,
+        "NOVO": 114,
+        "Patriota": 39,
+        "PTB": 24,
+        "Republicanos": 13,
+        "Progressistas": 11,
+        "PODE": 9,
+        "PRB": 3,
+        "PR": 2,
+        "PPS": 1
+      }
+    },
+    "unknown_labels": {},
+    "values": {
+      "SIM": 4312,
+      "NÃO": 920,
+      "LIVRE": 638,
+      "(null)": 20,
+      "OBSTRUÇÃO": 8
+    },
+    "coverage_per_year": {
+      "2019": {
+        "votes": 132,
+        "votes_with_orientation": 45,
+        "votes_with_orientation_pct": 34.1,
+        "vote_party_pairs": 2124,
+        "pairs_excluded_without_party": 87,
+        "pairs_with_party_orientation": 492,
+        "pairs_with_party_orientation_pct": 23.2,
+        "pairs_in_oriented_votes": 717,
+        "pairs_matched_in_oriented_votes_pct": 68.6
+      },
+      "2020": {
+        "votes": 193,
+        "votes_with_orientation": 4,
+        "votes_with_orientation_pct": 2.1,
+        "vote_party_pairs": 3088,
+        "pairs_excluded_without_party": 197,
+        "pairs_with_party_orientation": 59,
+        "pairs_with_party_orientation_pct": 1.9,
+        "pairs_in_oriented_votes": 64,
+        "pairs_matched_in_oriented_votes_pct": 92.2
+      },
+      "2021": {
+        "votes": 225,
+        "votes_with_orientation": 123,
+        "votes_with_orientation_pct": 54.7,
+        "vote_party_pairs": 3594,
+        "pairs_excluded_without_party": 55,
+        "pairs_with_party_orientation": 1703,
+        "pairs_with_party_orientation_pct": 47.4,
+        "pairs_in_oriented_votes": 1982,
+        "pairs_matched_in_oriented_votes_pct": 85.9
+      },
+      "2022": {
+        "votes": 169,
+        "votes_with_orientation": 79,
+        "votes_with_orientation_pct": 46.7,
+        "vote_party_pairs": 2718,
+        "pairs_excluded_without_party": 42,
+        "pairs_with_party_orientation": 904,
+        "pairs_with_party_orientation_pct": 33.3,
+        "pairs_in_oriented_votes": 1240,
+        "pairs_matched_in_oriented_votes_pct": 72.9
+      },
+      "2023": {
+        "votes": 141,
+        "votes_with_orientation": 47,
+        "votes_with_orientation_pct": 33.3,
+        "vote_party_pairs": 1833,
+        "pairs_excluded_without_party": 0,
+        "pairs_with_party_orientation": 496,
+        "pairs_with_party_orientation_pct": 27.1,
+        "pairs_in_oriented_votes": 611,
+        "pairs_matched_in_oriented_votes_pct": 81.2
+      },
+      "2024": {
+        "votes": 95,
+        "votes_with_orientation": 57,
+        "votes_with_orientation_pct": 60.0,
+        "vote_party_pairs": 1140,
+        "pairs_excluded_without_party": 41,
+        "pairs_with_party_orientation": 548,
+        "pairs_with_party_orientation_pct": 48.1,
+        "pairs_in_oriented_votes": 684,
+        "pairs_matched_in_oriented_votes_pct": 80.1
+      },
+      "2025": {
+        "votes": 128,
+        "votes_with_orientation": 49,
+        "votes_with_orientation_pct": 38.3,
+        "vote_party_pairs": 1536,
+        "pairs_excluded_without_party": 44,
+        "pairs_with_party_orientation": 446,
+        "pairs_with_party_orientation_pct": 29.0,
+        "pairs_in_oriented_votes": 588,
+        "pairs_matched_in_oriented_votes_pct": 75.9
+      },
+      "2026": {
+        "votes": 59,
+        "votes_with_orientation": 15,
+        "votes_with_orientation_pct": 25.4,
+        "vote_party_pairs": 756,
+        "pairs_excluded_without_party": 3,
+        "pairs_with_party_orientation": 96,
+        "pairs_with_party_orientation_pct": 12.7,
+        "pairs_in_oriented_votes": 188,
+        "pairs_matched_in_oriented_votes_pct": 51.1
+      }
+    }
+  },
+  "notes": [
+    "Completeness checked 2026-10-02: /votacao returned the same codigoSessaoVotacao set as the deprecated /plenario/lista/votacao (monthly, 2019 and 2024) and the static /dados/ListaVotacoes{ano}.json (every year 2019-2026). Clerk results /plenario/resultado/mes (independent Ordem do Dia system) matched 2024-07 (14/14), 2024-12 (35/35) and 2025-09 (8/8, same Sim/Não tallies); it has no data for 2019.",
+    "Low yearly counts are mostly real: the Senado decides most matters by symbolic vote. But the panel feed (orientations.unlinked_panel_votes, reason no_stored_vote) lists a few Senado nominal votes that /votacao does not publish (2019-02-12 requerimento de retirada de pauta, 2019-04-10 Requerimento 80/2019 verificação, 2022-04-06 Mensagem 86/2021). They are not stored: the panel feed has no senator codes, only names.",
+    "sve_sequence.numbers_not_in_api is not a missing-vote count: in 2019 sequencialVotacao is neither chronological nor contiguous; from 2022 on it is nearly contiguous.",
+    "p_nrv_entries: P-NRV is stored as present_not_voted, but the official vote page shows NCom for 182 of 1,843 P-NRV entries checked (160 votes; worst 2020 remote sessions, 58/116). Display it as 'não registrou voto', never as 'presente'.",
+    "votes_listing_only_voters: the cast list names only who voted (no absence codes), so a senator missing from it is 'desconhecido', not 'ausente'. votes_with_more_than_81: both a senator and his substitute are listed (5999: Eduardo Gomes NCom, Siqueira Campos Votou).",
+    "party_abbr is the senator's party at vote time under the name /votacao publishes now: renamed parties show the current sigla (April 2019 votes already say PL, not PR)."
+  ]
+}

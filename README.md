@@ -109,7 +109,23 @@ uv run elosys tse-social     --db elosys.db      # redes sociais declaradas
 uv run elosys tse-assets     --db elosys.db      # bens declarados
 uv run elosys transparencia-sanctions --db elosys.db   # CEIS/CNEP
 uv run elosys transparencia-earmarks  --db elosys.db   # emendas parlamentares
+uv run elosys camara-deputies --db elosys.db   # deputados 2019–2026: CPF, nascimento, períodos em exercício (API)
+uv run elosys camara-votes    --db elosys.db   # votações nominais do Plenário da Câmara 2019–2026
+uv run elosys senado-votes    --db elosys.db   # votações nominais do Plenário do Senado 2019–2026 (API)
 ```
+
+`camara-deputies` e `senado-votes` dependem do `tse-candidates` (ligam
+deputado/senador a uma pessoa já existente em `people`; nunca criam pessoa) — rode-os
+de novo depois de cada `tse-candidates`. `camara-votes` não depende de nenhum. A
+ordem entre eles é livre, mas sem o `camara-deputies` a interface não consegue dizer
+quem estava ausente. `camara-deputies` faz ~1.900 requisições à API da Câmara (no
+máximo ~3 por segundo; ~15 minutos); `senado-votes`, duas por mês
+(votações e orientações) e uma por senador. Decisões e limites em [`ADs/votacoes.md`](ADs/votacoes.md).
+
+Os arquivos anuais de votação da Câmara são **regerados todo dia**: o SHA-256
+muda a cada download mesmo sem dado novo, então o `elosys verify` acusa
+`CHANGED` neles. Para essa fonte, compare as contagens do
+`camara_votes_report.json`, não o hash.
 
 Se um download der HTTP 403 (filtro anti-bot da fonte), baixe o `.zip` no
 navegador, coloque em `dados_tmp/` com o nome que o log mostrou e rode o crawler
@@ -209,6 +225,15 @@ governo. O banco é um artefato descartável; a prova de integridade fica no
 | `company_registry` / `company_partner` | Data de abertura, situação cadastral e sócios de um CNPJ | `receita-cnpj` (incremental) |
 | `sanction` | CEIS/CNEP: quem está impedido de contratar com o governo ou punido por corrupção | `transparencia-sanctions` |
 | `rejected_cpf` | CPFs descartados por ambiguidade (mesmo CPF em >1 título eleitoral, etc.) e o motivo | `tse-candidates` |
+| `camara_deputy` / `camara_deputy_term` | Deputado (CPF, nome civil, nascimento, ligação com `people`) e cada mudança de situação do mandato (exercício, licença...), com `in_office` | `camara-deputies` |
+| `camara_vote` | Votação nominal do Plenário da Câmara: data, placar, descrição original, voto secreto, tipo (`kind`) e o que "Sim" significa (`meaning_code`) | `camara-votes` |
+| `camara_vote_cast` | Voto de cada deputado (partido na data da votação, valor bruto + normalizado; `Artigo 17` = presidindo) | `camara-votes` |
+| `camara_vote_orientation` / `camara_vote_party_bench` | Orientação de cada bancada (partido, federação, bloco, Governo...) e qual delas orientou cada partido, com a evidência | `camara-votes` |
+| `camara_vote_proposition` / `camara_proposition_theme` | Proposições ligadas à votação e os temas oficiais da Câmara | `camara-votes` |
+| `camara_session_presence` | Quem registrou presença na sessão de cada votação | `camara-votes` |
+| `senate_vote` / `senate_vote_cast` | Votação nominal do Plenário do Senado e o voto (ou ausência, com o código oficial) de cada senador | `senado-votes` |
+| `senate_vote_orientation` | Orientação de bancada publicada pelo painel do Senado (parcial) | `senado-votes` |
+| `senate_senator` | Senador (nome completo, nascimento, ligação com `people`) | `senado-votes` |
 | `source` / `collection` / `collection_file` / `parse` | Proveniência: de qual órgão, qual URL, qual arquivo, qual hash, qual parser saiu cada linha | todos |
 | `rule_run` / `signal` / `signal_actor` / `signal_evidence` | Sinais de alerta gerados por regras de detecção (não vêm de nenhuma fonte — ver [`ADs/dados_derivados.md`](ADs/dados_derivados.md)) | `rule-disproportionate-expense`, `rule-circular-donations` |
 | `signal_ai_review` | Segunda opinião de um LLM sobre cada sinal (rotineiro vs. bizarro), com a resposta e o prompt salvos verbatim | `ai-review` (opcional, precisa de `DEEPSEEK_API_KEY`) |
@@ -291,6 +316,10 @@ Cada execução de crawler escreve/atualiza, ao lado do `.db`:
   — o relatório daquela execução: linhas lidas por ano, CNPJs/candidaturas/URLs
   gerados, CPFs derrubados por ambiguidade (com o motivo), quantas linhas ficaram
   sem vínculo de identidade.
+- **`camara_deputies_report.json`, `camara_votes_report.json`, `senado_votes_report.json`**
+  — o mesmo para as votações: cada linha lida contada como inserida, rejeitada ou
+  descartada (com o motivo), placar conferido contra os votos, cobertura da
+  orientação por partido e do significado do voto, deputados/senadores sem vínculo.
 
 Além disso, **o próprio console é um log**: cada crawler imprime a URL, o tamanho e
 o hash do arquivo, o progresso da leitura linha a linha, e um resumo por ano.
@@ -307,6 +336,7 @@ As decisões estão em [`ADs/`](ADs/), uma por assunto. Resumo:
 | [`identidade.md`](ADs/identidade.md) | Identidade é **afirmação nossa**, não dado da fonte. Match determinístico por título eleitoral e CPF. Na dúvida (CPF ambíguo), **não afirma** — descarta o CPF e registra o porquê. |
 | [`politician.md`](ADs/politician.md) | Sem tabela "o político X"; só "a candidatura de X no ano N" (`politician_history`). CPF mascarado de 2024 tratado por título eleitoral. `campaign_org` para o CNPJ de campanha. |
 | [`dados_derivados.md`](ADs/dados_derivados.md) | Correlações e flags (`disproportionate_expense`, `circular_donations`) também têm proveniência: qual regra, qual versão, sobre quais linhas. Severidade só `low/medium/high`, nunca "confirmado". |
+| [`votacoes.md`](ADs/votacoes.md) | Votações nominais da Câmara e do Senado. Orientação de partido só com evidência; o significado do "Sim" é lido por regra versionada e, na dúvida, fica "interpretação indisponível". Fidelidade e concordância são calculadas na consulta. |
 
 ## Fontes de dados (todas oficiais/públicas)
 
@@ -323,7 +353,11 @@ As decisões estão em [`ADs/`](ADs/), uma por assunto. Resumo:
 | CNJ — DataJud | Metadados de processos judiciais públicos | ⛔ inviável pela API pública — ver nota abaixo |
 | Portal da Transparência — CEIS/CNEP | Empresas/pessoas impedidas de contratar com o governo ou punidas por corrupção | ✅ coletado (snapshot diário) |
 | Portal da Transparência — contratos/emendas | Contratos, convênios, emendas parlamentares | ⬜ pendente |
-| Câmara / Senado — dados abertos | Mandatos em exercício, votações, cota parlamentar (CEAP) | ⬜ pendente |
+| Câmara — arquivos anuais de votações | Votações nominais do Plenário, votos, orientações de bancada, presença na sessão, temas | ✅ coletado (2019–2026) |
+| Câmara — API de dados abertos | Deputados (CPF, nascimento, histórico de exercício do mandato) e composição de blocos | ✅ coletado (legislaturas 56 e 57) |
+| Senado — API de dados abertos | Votações nominais do Plenário, votos e ausências, orientação do painel (parcial), cadastro do senador | ✅ coletado (2019–2026) |
+| CLDF — votações | Votações da Câmara Legislativa do DF | ⛔ indisponível — sem dado estruturado, só diários em PDF |
+| Câmara / Senado — cota parlamentar (CEAP) | Gastos de gabinete | ⬜ pendente |
 
 **Não coletamos** (protegido / sigiloso): endereço residencial, telefone e e-mail
 pessoal de candidatos; antecedentes fora de processo público; relatórios do COAF.

@@ -12,13 +12,13 @@ export type Provenance = {
   parserVersion: string;
 };
 
-const PROVENANCE_JOIN = `
+export const PROVENANCE_JOIN = `
   JOIN parse pa ON pa.id = t.provenance_id
   JOIN collection col ON col.id = pa.collection_id
   JOIN source src ON src.id = col.source_id
 `;
 
-const PROVENANCE_COLUMNS = `
+export const PROVENANCE_COLUMNS = `
   src.name        AS srcSourceName,
   src.agency      AS srcAgency,
   src.legal_basis AS srcLegalBasis,
@@ -29,7 +29,7 @@ const PROVENANCE_COLUMNS = `
   pa.parser_version AS srcParserVersion
 `;
 
-function pickProvenance(row: Record<string, unknown>): Provenance {
+export function pickProvenance(row: Record<string, unknown>): Provenance {
   return {
     sourceName: row.srcSourceName as string,
     agency: row.srcAgency as string,

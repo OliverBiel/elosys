@@ -1,0 +1,993 @@
+{
+ "/deputados?idLegislatura=56&itens=100&ordem=ASC&ordenarPor=id": {
+  "dados": [
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Joao Silva",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "email": null
+   },
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Joao Silva",
+    "siglaPartido": "BBB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "email": null
+   },
+   {
+    "id": 1002,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1002",
+    "nome": "Maria Souza",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "GO",
+    "idLegislatura": 56,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1002.jpg",
+    "email": null
+   },
+   {
+    "id": 1003,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1003",
+    "nome": "Pedro Ambiguo",
+    "siglaPartido": "CCC",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "SP",
+    "idLegislatura": 56,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1003.jpg",
+    "email": null
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=56&ordem=ASC&ordenarPor=id&pagina=1&itens=100"
+   },
+   {
+    "rel": "next",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=56&ordem=ASC&ordenarPor=id&pagina=2&itens=100"
+   },
+   {
+    "rel": "first",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=56&ordem=ASC&ordenarPor=id&pagina=1&itens=100"
+   },
+   {
+    "rel": "last",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=56&ordem=ASC&ordenarPor=id&pagina=2&itens=100"
+   }
+  ]
+ },
+ "/deputados?idLegislatura=56&ordem=ASC&ordenarPor=id&pagina=2&itens=100": {
+  "dados": [
+   {
+    "id": 1004,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1004",
+    "nome": "Ana Fora",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "RJ",
+    "idLegislatura": 56,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1004.jpg",
+    "email": null
+   },
+   {
+    "id": 1005,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1005",
+    "nome": "Sem Cpf",
+    "siglaPartido": "BBB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "MG",
+    "idLegislatura": 56,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1005.jpg",
+    "email": null
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=56&ordem=ASC&ordenarPor=id&pagina=2&itens=100"
+   },
+   {
+    "rel": "first",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=56&ordem=ASC&ordenarPor=id&pagina=1&itens=100"
+   },
+   {
+    "rel": "last",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=56&ordem=ASC&ordenarPor=id&pagina=2&itens=100"
+   }
+  ]
+ },
+ "/deputados?idLegislatura=57&itens=100&ordem=ASC&ordenarPor=id": {
+  "dados": [
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Joao Silva",
+    "siglaPartido": "BBB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "email": null
+   },
+   {
+    "id": 1006,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1006",
+    "nome": "Cpf Torto",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1006.jpg",
+    "email": null
+   },
+   {
+    "id": 1007,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1007",
+    "nome": "Outra Pessoa",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "PE",
+    "idLegislatura": 57,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1007.jpg",
+    "email": null
+   },
+   {
+    "id": 1008,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1008",
+    "nome": "Suplente Volta",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1008.jpg",
+    "email": null
+   }
+  ],
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=57&ordem=ASC&ordenarPor=id&pagina=1&itens=100"
+   },
+   {
+    "rel": "first",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=57&ordem=ASC&ordenarPor=id&pagina=1&itens=100"
+   },
+   {
+    "rel": "last",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=57&ordem=ASC&ordenarPor=id&pagina=1&itens=100"
+   }
+  ]
+ },
+ "/deputados/1001": {
+  "dados": {
+   "id": 1001,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+   "nomeCivil": "JOÃO DA SILVA",
+   "ultimoStatus": {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Joao Silva",
+    "siglaPartido": "AAA",
+    "uriPartido": null,
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "email": null,
+    "data": "2023-02-01",
+    "nomeEleitoral": "Joao Silva",
+    "gabinete": {
+     "nome": "1",
+     "predio": "4",
+     "sala": "1",
+     "andar": "1",
+     "telefone": "3215-0000",
+     "email": null
+    },
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": null
+   },
+   "cpf": "11122233396",
+   "sexo": "M",
+   "urlWebsite": null,
+   "redeSocial": [],
+   "dataNascimento": "1970-05-10",
+   "dataFalecimento": null,
+   "ufNascimento": "DF",
+   "municipioNascimento": "Brasília",
+   "escolaridade": "Superior"
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001"
+   }
+  ]
+ },
+ "/deputados/1002": {
+  "dados": {
+   "id": 1002,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1002",
+   "nomeCivil": "Maria  de Souza ",
+   "ultimoStatus": {
+    "id": 1002,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1002",
+    "nome": "Maria Souza",
+    "siglaPartido": "AAA",
+    "uriPartido": null,
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1002.jpg",
+    "email": null,
+    "data": "2023-02-01",
+    "nomeEleitoral": "Maria Souza",
+    "gabinete": {
+     "nome": "1",
+     "predio": "4",
+     "sala": "1",
+     "andar": "1",
+     "telefone": "3215-0000",
+     "email": null
+    },
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": null
+   },
+   "cpf": "222.333.444-05",
+   "sexo": "M",
+   "urlWebsite": null,
+   "redeSocial": [],
+   "dataNascimento": "1980-02-02",
+   "dataFalecimento": null,
+   "ufNascimento": "DF",
+   "municipioNascimento": "Brasília",
+   "escolaridade": "Superior"
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados/1002"
+   }
+  ]
+ },
+ "/deputados/1003": {
+  "dados": {
+   "id": 1003,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1003",
+   "nomeCivil": "PEDRO AMBIGUO",
+   "ultimoStatus": {
+    "id": 1003,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1003",
+    "nome": "Pedro Ambiguo",
+    "siglaPartido": "AAA",
+    "uriPartido": null,
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1003.jpg",
+    "email": null,
+    "data": "2023-02-01",
+    "nomeEleitoral": "Pedro Ambiguo",
+    "gabinete": {
+     "nome": "1",
+     "predio": "4",
+     "sala": "1",
+     "andar": "1",
+     "telefone": "3215-0000",
+     "email": null
+    },
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": null
+   },
+   "cpf": "33344455508",
+   "sexo": "M",
+   "urlWebsite": null,
+   "redeSocial": [],
+   "dataNascimento": "1960-01-01",
+   "dataFalecimento": null,
+   "ufNascimento": "DF",
+   "municipioNascimento": "Brasília",
+   "escolaridade": "Superior"
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados/1003"
+   }
+  ]
+ },
+ "/deputados/1004": {
+  "dados": {
+   "id": 1004,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1004",
+   "nomeCivil": "ANA FORA",
+   "ultimoStatus": {
+    "id": 1004,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1004",
+    "nome": "Ana Fora",
+    "siglaPartido": "AAA",
+    "uriPartido": null,
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1004.jpg",
+    "email": null,
+    "data": "2023-02-01",
+    "nomeEleitoral": "Ana Fora",
+    "gabinete": {
+     "nome": "1",
+     "predio": "4",
+     "sala": "1",
+     "andar": "1",
+     "telefone": "3215-0000",
+     "email": null
+    },
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": null
+   },
+   "cpf": "44455566619",
+   "sexo": "M",
+   "urlWebsite": null,
+   "redeSocial": [],
+   "dataNascimento": "1975-03-03",
+   "dataFalecimento": null,
+   "ufNascimento": "DF",
+   "municipioNascimento": "Brasília",
+   "escolaridade": "Superior"
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados/1004"
+   }
+  ]
+ },
+ "/deputados/1005": {
+  "dados": {
+   "id": 1005,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1005",
+   "nomeCivil": "SEM CPF",
+   "ultimoStatus": {
+    "id": 1005,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1005",
+    "nome": "Sem Cpf",
+    "siglaPartido": "AAA",
+    "uriPartido": null,
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1005.jpg",
+    "email": null,
+    "data": "2023-02-01",
+    "nomeEleitoral": "Sem Cpf",
+    "gabinete": {
+     "nome": "1",
+     "predio": "4",
+     "sala": "1",
+     "andar": "1",
+     "telefone": "3215-0000",
+     "email": null
+    },
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": null
+   },
+   "cpf": null,
+   "sexo": "M",
+   "urlWebsite": null,
+   "redeSocial": [],
+   "dataNascimento": "1965-04-04",
+   "dataFalecimento": null,
+   "ufNascimento": "DF",
+   "municipioNascimento": "Brasília",
+   "escolaridade": "Superior"
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados/1005"
+   }
+  ]
+ },
+ "/deputados/1006": {
+  "dados": {
+   "id": 1006,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1006",
+   "nomeCivil": "CPF TORTO",
+   "ultimoStatus": {
+    "id": 1006,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1006",
+    "nome": "Cpf Torto",
+    "siglaPartido": "AAA",
+    "uriPartido": null,
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1006.jpg",
+    "email": null,
+    "data": "2023-02-01",
+    "nomeEleitoral": "Cpf Torto",
+    "gabinete": {
+     "nome": "1",
+     "predio": "4",
+     "sala": "1",
+     "andar": "1",
+     "telefone": "3215-0000",
+     "email": null
+    },
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": null
+   },
+   "cpf": "12345678900",
+   "sexo": "M",
+   "urlWebsite": null,
+   "redeSocial": [],
+   "dataNascimento": "1990-06-06",
+   "dataFalecimento": null,
+   "ufNascimento": "DF",
+   "municipioNascimento": "Brasília",
+   "escolaridade": "Superior"
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados/1006"
+   }
+  ]
+ },
+ "/deputados/1007": {
+  "dados": {
+   "id": 1007,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1007",
+   "nomeCivil": "OUTRA PESSOA",
+   "ultimoStatus": {
+    "id": 1007,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1007",
+    "nome": "Outra Pessoa",
+    "siglaPartido": "AAA",
+    "uriPartido": null,
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1007.jpg",
+    "email": null,
+    "data": "2023-02-01",
+    "nomeEleitoral": "Outra Pessoa",
+    "gabinete": {
+     "nome": "1",
+     "predio": "4",
+     "sala": "1",
+     "andar": "1",
+     "telefone": "3215-0000",
+     "email": null
+    },
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": null
+   },
+   "cpf": "55566677720",
+   "sexo": "M",
+   "urlWebsite": null,
+   "redeSocial": [],
+   "dataNascimento": "1985-07-07",
+   "dataFalecimento": null,
+   "ufNascimento": "DF",
+   "municipioNascimento": "Brasília",
+   "escolaridade": "Superior"
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados/1007"
+   }
+  ]
+ },
+ "/deputados/1001/historico": {
+  "dados": [
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "dataHora": "2023-02-01T00:00",
+    "situacao": null,
+    "condicaoEleitoral": null,
+    "descricaoStatus": "Nome no início da legislatura / Partido no início da legislatura"
+   },
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "dataHora": "2023-02-01T12:05",
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Entrada - Posse de Eleito Titular - Posse na Sessão Preparatória"
+   },
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "dataHora": "2019-02-01T00:00",
+    "situacao": null,
+    "condicaoEleitoral": null,
+    "descricaoStatus": "Nome no início da legislatura / Partido no início da legislatura"
+   },
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "dataHora": "2019-02-01T11:45",
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Entrada - Posse de Eleito Titular - Posse na Sessão Preparatória"
+   },
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "dataHora": "2020-03-01T10:00",
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Alteração de partido"
+   },
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "dataHora": "2020-06-15T09:00",
+    "situacao": "Licença",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Saída - Afastamento sem prazo determinado - Ministro de Estado"
+   },
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "dataHora": "2020-09-01T10:00",
+    "situacao": "Licença",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Alteração de partido"
+   },
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "dataHora": "2021-03-31T14:00",
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Entrada - Reassunção"
+   },
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "dataHora": "2023-01-31T23:59",
+    "situacao": "FIM_MANDATO",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Saída - Afastamento definitivo - Término da Legislatura"
+   },
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "dataHora": "2023-02-01T00:00",
+    "situacao": null,
+    "condicaoEleitoral": null,
+    "descricaoStatus": "Nome no início da legislatura / Partido no início da legislatura"
+   },
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 55,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "dataHora": "2015-02-01T10:00",
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Entrada - Posse de Eleito Titular - Posse na Sessão Preparatória"
+   },
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 55,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "dataHora": "2019-01-31T23:59",
+    "situacao": "FIM_MANDATO",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Saída - Afastamento definitivo - Término da Legislatura"
+   },
+   {
+    "id": 1001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1001",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 50,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1001.jpg",
+    "dataHora": "2023-02-01T00:00",
+    "situacao": null,
+    "condicaoEleitoral": null,
+    "descricaoStatus": "Nome no início da legislatura / Partido no início da legislatura"
+   }
+  ],
+  "links": []
+ },
+ "/deputados/1002/historico": {
+  "dados": [
+   {
+    "id": 1002,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1002",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1002.jpg",
+    "dataHora": "2019-05-02T15:00",
+    "situacao": "CONVOCADO",
+    "condicaoEleitoral": "Suplente",
+    "descricaoStatus": "DIVERSO - Convocação Eleito ou Suplente"
+   },
+   {
+    "id": 1002,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1002",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1002.jpg",
+    "dataHora": "2019-05-02T15:00",
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Suplente",
+    "descricaoStatus": "Entrada - Posse de Suplente - Posse como Suplente"
+   },
+   {
+    "id": 1002,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1002",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1002.jpg",
+    "dataHora": "2019-12-10T10:00",
+    "situacao": "SUPLENCIA",
+    "condicaoEleitoral": "Suplente",
+    "descricaoStatus": "Saída - Afastamento sem prazo determinado - Afastamento de Suplente (automático)"
+   }
+  ],
+  "links": []
+ },
+ "/deputados/1003/historico": {
+  "dados": [
+   {
+    "id": 1003,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1003",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1003.jpg",
+    "dataHora": "2019-02-01T11:45",
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Entrada - Posse de Eleito Titular - Posse na Sessão Preparatória"
+   },
+   {
+    "id": 1003,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1003",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1003.jpg",
+    "dataHora": "2023-01-31T23:59",
+    "situacao": "FIM_MANDATO",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Saída - Afastamento definitivo - Término da Legislatura"
+   }
+  ],
+  "links": []
+ },
+ "/deputados/1004/historico": {
+  "dados": [],
+  "links": []
+ },
+ "/deputados/1005/historico": {
+  "dados": [
+   {
+    "id": 1005,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1005",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 56,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1005.jpg",
+    "dataHora": "2019-02-01T11:45",
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Entrada - Posse de Eleito Titular - Posse na Sessão Preparatória"
+   }
+  ],
+  "links": []
+ },
+ "/deputados/1006/historico": {
+  "dados": [
+   {
+    "id": 1006,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1006",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1006.jpg",
+    "dataHora": "2023-02-01T12:05",
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Entrada - Posse de Eleito Titular - Posse na Sessão Preparatória"
+   }
+  ],
+  "links": []
+ },
+ "/deputados/1007/historico": {
+  "dados": [
+   {
+    "id": 1007,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1007",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1007.jpg",
+    "dataHora": "2023-02-01T12:05",
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Entrada - Posse de Eleito Titular - Posse na Sessão Preparatória"
+   },
+   {
+    "id": 1007,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1007",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1007.jpg",
+    "dataHora": "2024-01-10T10:00",
+    "situacao": "Licença",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": "Saída - Afastamento com prazo determinado - Licença para Tratamento de Saúde"
+   }
+  ],
+  "links": []
+ },
+ "/deputados/1008": {
+  "dados": {
+   "id": 1008,
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1008",
+   "nomeCivil": "SUPLENTE VOLTA",
+   "ultimoStatus": {
+    "id": 1008,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1008",
+    "nome": "Suplente Volta",
+    "siglaPartido": "AAA",
+    "uriPartido": null,
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1007.jpg",
+    "email": null,
+    "data": "2023-02-01",
+    "nomeEleitoral": "Suplente Volta",
+    "gabinete": {
+     "nome": "1",
+     "predio": "4",
+     "sala": "1",
+     "andar": "1",
+     "telefone": "3215-0000",
+     "email": null
+    },
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Titular",
+    "descricaoStatus": null
+   },
+   "cpf": "66677788830",
+   "sexo": "M",
+   "urlWebsite": null,
+   "redeSocial": [],
+   "dataNascimento": "1972-08-08",
+   "dataFalecimento": null,
+   "ufNascimento": "DF",
+   "municipioNascimento": "Brasília",
+   "escolaridade": "Superior"
+  },
+  "links": [
+   {
+    "rel": "self",
+    "href": "https://dadosabertos.camara.leg.br/api/v2/deputados/1008"
+   }
+  ]
+ },
+ "/deputados/1008/historico": {
+  "dados": [
+   {
+    "id": 1008,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1008",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1008.jpg",
+    "dataHora": "2022-03-31T00:00",
+    "situacao": "Exercício",
+    "condicaoEleitoral": "Suplente",
+    "descricaoStatus": "Alteração de partido"
+   },
+   {
+    "id": 1008,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1008",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1008.jpg",
+    "dataHora": "2023-03-01T10:00",
+    "situacao": "CONVOCADO",
+    "condicaoEleitoral": "Suplente",
+    "descricaoStatus": "DIVERSO - Convocação Eleito ou Suplente - Aguardando Convocação de Suplente"
+   },
+   {
+    "id": 1008,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1008",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1008.jpg",
+    "dataHora": "2023-03-01T11:00",
+    "situacao": "CONVOCADO",
+    "condicaoEleitoral": "Suplente",
+    "descricaoStatus": "Entrada - Reassunção / DIVERSO - Convocação Eleito ou Suplente"
+   },
+   {
+    "id": 1008,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/1008",
+    "nome": "Fulano",
+    "nomeEleitoral": "FULANO",
+    "siglaPartido": "AAA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/1",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/1008.jpg",
+    "dataHora": "2024-05-01T00:00",
+    "situacao": "SUPLENCIA",
+    "condicaoEleitoral": "Suplente",
+    "descricaoStatus": "Saída - Afastamento sem prazo determinado - Afastamento de Suplente (automático)"
+   }
+  ],
+  "links": []
+ }
+}

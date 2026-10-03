@@ -23,6 +23,7 @@ Não repúdio aqui significa três garantias:
 | [imutabilidade.md](imutabilidade.md) | Build reprodutível (rewrite-only) e âncora no git | Aceita |
 | [dados_derivados.md](dados_derivados.md) | Proveniência de correlações e regras de detecção; primeira regra: `disproportionate_expense` | Aceita |
 | [identidade.md](identidade.md) | Tabela mestra `people` e resolução de identidade | Aceita |
+| [votacoes.md](votacoes.md) | Votações nominais da Câmara e do Senado: identidade, exercício, orientação, significado do voto | Aceita |
 
 ## Formato
 

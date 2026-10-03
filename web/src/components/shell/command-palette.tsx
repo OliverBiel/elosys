@@ -10,6 +10,11 @@ import { useShell } from "./shell-context";
 const SHORTCUTS = [
   { href: "/", label: "Início" },
   { href: "/grafo", label: "Grafo de correlações" },
+  { href: "/emendas", label: "Emendas parlamentares" },
+  { href: "/votacoes", label: "Votações · Votações nominais" },
+  { href: "/votacoes/partidos", label: "Votações · Partidos" },
+  { href: "/votacoes/comparar", label: "Votações · Comparar" },
+  { href: "/votacoes/parlamentares?uf=DF", label: "Votações · Parlamentares" },
   { href: "/sinais/doacao-circular", label: "Sinais · Doação circular" },
   { href: "/sinais/socio-fornecedor", label: "Sinais · Sócio de fornecedor" },
   { href: "/sinais/analise-ia", label: "Sinais · Análise de IA" },

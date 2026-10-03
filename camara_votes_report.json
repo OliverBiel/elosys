@@ -1,0 +1,926 @@
+{
+  "parser_version": "1.0+kind1.2",
+  "years": {
+    "2019": {
+      "plen_nominal_votes": 316,
+      "files": {
+        "votacoes": {
+          "rows": 8730,
+          "inserted": 316,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 7768,
+            "symbolic": 646
+          }
+        },
+        "votacoesVotos": {
+          "rows": 120998,
+          "inserted": 120364,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 634
+          }
+        },
+        "votacoesProposicoes": {
+          "rows": 5875,
+          "inserted": 316,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 5559
+          }
+        },
+        "votacoesOrientacoes": {
+          "rows": 7085,
+          "inserted": 6545,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 540
+          }
+        },
+        "eventosPresencaDeputados": {
+          "rows": 152027,
+          "inserted": 45890,
+          "rejected": {},
+          "dropped": {
+            "event_not_stored": 106137
+          }
+        }
+      }
+    },
+    "2020": {
+      "plen_nominal_votes": 393,
+      "files": {
+        "votacoes": {
+          "rows": 1493,
+          "inserted": 393,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 180,
+            "symbolic": 920
+          }
+        },
+        "votacoesVotos": {
+          "rows": 159717,
+          "inserted": 159717,
+          "rejected": {},
+          "dropped": {}
+        },
+        "votacoesProposicoes": {
+          "rows": 1434,
+          "inserted": 403,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 1031
+          }
+        },
+        "votacoesOrientacoes": {
+          "rows": 9352,
+          "inserted": 9352,
+          "rejected": {},
+          "dropped": {}
+        },
+        "eventosPresencaDeputados": {
+          "rows": 68448,
+          "inserted": 44072,
+          "rejected": {},
+          "dropped": {
+            "event_not_stored": 24376
+          }
+        }
+      }
+    },
+    "2021": {
+      "plen_nominal_votes": 755,
+      "files": {
+        "votacoes": {
+          "rows": 9999,
+          "inserted": 755,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 8427,
+            "symbolic": 817
+          }
+        },
+        "votacoesVotos": {
+          "rows": 322237,
+          "inserted": 315581,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 6656
+          }
+        },
+        "votacoesProposicoes": {
+          "rows": 7922,
+          "inserted": 800,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 7122
+          }
+        },
+        "votacoesOrientacoes": {
+          "rows": 22415,
+          "inserted": 20448,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 1967
+          }
+        },
+        "eventosPresencaDeputados": {
+          "rows": 146390,
+          "inserted": 58111,
+          "rejected": {},
+          "dropped": {
+            "event_not_stored": 88279
+          }
+        }
+      }
+    },
+    "2022": {
+      "plen_nominal_votes": 507,
+      "files": {
+        "votacoes": {
+          "rows": 5580,
+          "inserted": 507,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 4241,
+            "symbolic": 832
+          }
+        },
+        "votacoesVotos": {
+          "rows": 197189,
+          "inserted": 194863,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 2326
+          }
+        },
+        "votacoesProposicoes": {
+          "rows": 4291,
+          "inserted": 535,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 3756
+          }
+        },
+        "votacoesOrientacoes": {
+          "rows": 14415,
+          "inserted": 13657,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 758
+          }
+        },
+        "eventosPresencaDeputados": {
+          "rows": 75734,
+          "inserted": 34199,
+          "rejected": {},
+          "dropped": {
+            "event_not_stored": 41535
+          }
+        }
+      }
+    },
+    "2023": {
+      "plen_nominal_votes": 300,
+      "files": {
+        "votacoes": {
+          "rows": 10851,
+          "inserted": 300,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 9761,
+            "symbolic": 790
+          }
+        },
+        "votacoesVotos": {
+          "rows": 128679,
+          "inserted": 123242,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 5437
+          }
+        },
+        "votacoesProposicoes": {
+          "rows": 8803,
+          "inserted": 332,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 8471
+          }
+        },
+        "votacoesOrientacoes": {
+          "rows": 4359,
+          "inserted": 3073,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 1286
+          }
+        },
+        "eventosPresencaDeputados": {
+          "rows": 107795,
+          "inserted": 30146,
+          "rejected": {},
+          "dropped": {
+            "event_not_stored": 77649
+          }
+        }
+      }
+    },
+    "2024": {
+      "plen_nominal_votes": 273,
+      "files": {
+        "votacoes": {
+          "rows": 10373,
+          "inserted": 273,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 8229,
+            "symbolic": 1871
+          }
+        },
+        "votacoesVotos": {
+          "rows": 116400,
+          "inserted": 110462,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 5938
+          }
+        },
+        "votacoesProposicoes": {
+          "rows": 7447,
+          "inserted": 305,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 7142
+          }
+        },
+        "votacoesOrientacoes": {
+          "rows": 4361,
+          "inserted": 3003,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 1358
+          }
+        },
+        "eventosPresencaDeputados": {
+          "rows": 77679,
+          "inserted": 28138,
+          "rejected": {},
+          "dropped": {
+            "event_not_stored": 49541
+          }
+        }
+      }
+    },
+    "2025": {
+      "plen_nominal_votes": 429,
+      "files": {
+        "votacoes": {
+          "rows": 13827,
+          "inserted": 429,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 11786,
+            "symbolic": 1612
+          }
+        },
+        "votacoesVotos": {
+          "rows": 175067,
+          "inserted": 171217,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 3850
+          }
+        },
+        "votacoesProposicoes": {
+          "rows": 10314,
+          "inserted": 444,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 9870
+          }
+        },
+        "votacoesOrientacoes": {
+          "rows": 4947,
+          "inserted": 4126,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 821
+          }
+        },
+        "eventosPresencaDeputados": {
+          "rows": 110014,
+          "inserted": 37326,
+          "rejected": {},
+          "dropped": {
+            "event_not_stored": 72688
+          }
+        }
+      }
+    },
+    "2026": {
+      "plen_nominal_votes": 123,
+      "files": {
+        "votacoes": {
+          "rows": 7360,
+          "inserted": 123,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 6004,
+            "symbolic": 1233
+          }
+        },
+        "votacoesVotos": {
+          "rows": 51832,
+          "inserted": 50622,
+          "rejected": {},
+          "dropped": {
+            "not_plen": 1210
+          }
+        },
+        "votacoesProposicoes": {
+          "rows": 5672,
+          "inserted": 135,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 5537
+          }
+        },
+        "votacoesOrientacoes": {
+          "rows": 1859,
+          "inserted": 1655,
+          "rejected": {},
+          "dropped": {
+            "vote_not_stored": 204
+          }
+        },
+        "eventosPresencaDeputados": {
+          "rows": 58761,
+          "inserted": 20765,
+          "rejected": {},
+          "dropped": {
+            "event_not_stored": 37996
+          }
+        }
+      }
+    }
+  },
+  "blocs": {
+    "legislatures": [
+      56,
+      57
+    ],
+    "api_calls": 17,
+    "blocs": 15,
+    "federations": 3
+  },
+  "bench": {
+    "total": 69891,
+    "matched": 65628,
+    "unmatched": 4263,
+    "matched_pct": 93.9,
+    "by_basis": {
+      "party": 45755,
+      "bloc_curated": 12149,
+      "bloc_api": 1938,
+      "federation": 4777,
+      "bloc_label": 1009
+    },
+    "by_reason": {
+      "bloc_unresolved": 1312,
+      "no_bench_row": 2517,
+      "no_party": 434
+    },
+    "evidence": {
+      "bloc_curated:url": 12149,
+      "bloc_api:url": 1938,
+      "federation:url": 4777,
+      "bloc_label:label": 1009
+    },
+    "casts_without_party": 0
+  },
+  "themes": {
+    "years": [
+      1991,
+      1995,
+      1997,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2007,
+      2008,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "propositions_without_year": 0,
+    "files": {
+      "1991": {
+        "rows": 1472,
+        "inserted": 1,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 1471
+        }
+      },
+      "1995": {
+        "rows": 1415,
+        "inserted": 1,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 1414
+        }
+      },
+      "1997": {
+        "rows": 2424,
+        "inserted": 1,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 2423
+        }
+      },
+      "2000": {
+        "rows": 3072,
+        "inserted": 1,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 3071
+        }
+      },
+      "2001": {
+        "rows": 3456,
+        "inserted": 1,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 3455
+        }
+      },
+      "2002": {
+        "rows": 4907,
+        "inserted": 3,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 4904
+        }
+      },
+      "2003": {
+        "rows": 8492,
+        "inserted": 1,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 8491
+        }
+      },
+      "2004": {
+        "rows": 5115,
+        "inserted": 1,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 5114
+        }
+      },
+      "2005": {
+        "rows": 7250,
+        "inserted": 4,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 7246
+        }
+      },
+      "2007": {
+        "rows": 11377,
+        "inserted": 7,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 11370
+        }
+      },
+      "2008": {
+        "rows": 9161,
+        "inserted": 3,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 9158
+        }
+      },
+      "2010": {
+        "rows": 5235,
+        "inserted": 2,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 5233
+        }
+      },
+      "2011": {
+        "rows": 9735,
+        "inserted": 10,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 9725
+        }
+      },
+      "2012": {
+        "rows": 5496,
+        "inserted": 4,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 5492
+        }
+      },
+      "2013": {
+        "rows": 7770,
+        "inserted": 5,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 7765
+        }
+      },
+      "2014": {
+        "rows": 4093,
+        "inserted": 5,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 4088
+        }
+      },
+      "2015": {
+        "rows": 10841,
+        "inserted": 19,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 10822
+        }
+      },
+      "2016": {
+        "rows": 7055,
+        "inserted": 6,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 7049
+        }
+      },
+      "2017": {
+        "rows": 8604,
+        "inserted": 33,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 8571
+        }
+      },
+      "2018": {
+        "rows": 5126,
+        "inserted": 31,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 5095
+        }
+      },
+      "2019": {
+        "rows": 15534,
+        "inserted": 188,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 15346
+        }
+      },
+      "2020": {
+        "rows": 19186,
+        "inserted": 273,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 18913
+        }
+      },
+      "2021": {
+        "rows": 15456,
+        "inserted": 275,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 15181
+        }
+      },
+      "2022": {
+        "rows": 10109,
+        "inserted": 148,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 9961
+        }
+      },
+      "2023": {
+        "rows": 22917,
+        "inserted": 248,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 22669
+        }
+      },
+      "2024": {
+        "rows": 23732,
+        "inserted": 198,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 23534
+        }
+      },
+      "2025": {
+        "rows": 40909,
+        "inserted": 203,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 40706
+        }
+      },
+      "2026": {
+        "rows": 24862,
+        "inserted": 54,
+        "rejected": {},
+        "dropped": {
+          "proposition_not_stored": 24808
+        }
+      }
+    }
+  },
+  "tables": {
+    "camara_vote": 3096,
+    "camara_vote_proposition": 3270,
+    "camara_proposition_theme": 1726,
+    "camara_session_presence": 298647,
+    "camara_vote_cast": 1246068,
+    "camara_vote_orientation": 61859,
+    "camara_vote_party_bench": 69891
+  },
+  "secret_votes": 3,
+  "secret_vote_ids": [
+    "2312515-18",
+    "2576389-4",
+    "2645346-18"
+  ],
+  "mixed_secret_vote_ids": [],
+  "ambiguous_proposition_type_vote_ids": [
+    "2227826-24",
+    "2244773-6",
+    "2253458-7",
+    "2255237-7",
+    "2251922-8",
+    "2258907-9",
+    "2266253-8",
+    "2258717-9",
+    "2264837-9",
+    "2265440-8",
+    "2233718-10",
+    "2266321-8",
+    "2269049-8",
+    "2269480-8",
+    "2269481-8",
+    "2273570-9",
+    "2273738-9",
+    "2273740-9",
+    "2273736-9",
+    "2276120-16",
+    "2275192-9",
+    "2270163-9",
+    "2274464-8",
+    "2275355-10",
+    "2278141-8",
+    "2253453-10",
+    "2279545-9",
+    "2278599-8",
+    "2259474-8",
+    "2280394-9",
+    "2279258-8",
+    "2286125-7",
+    "2211629-12",
+    "2286932-7",
+    "2280741-9",
+    "2287390-7",
+    "2287777-8",
+    "2284777-7",
+    "2289537-9",
+    "2274646-8",
+    "2288734-8",
+    "2232067-10",
+    "2253137-15",
+    "532363-24",
+    "532363-27",
+    "2283740-12",
+    "2290774-17",
+    "2295975-8",
+    "2297870-6",
+    "2296914-11",
+    "2299647-11",
+    "2296827-14",
+    "2301914-8",
+    "2304142-8",
+    "2304142-11",
+    "2304733-7",
+    "2306440-6",
+    "2114626-17",
+    "2312874-9",
+    "2314199-8",
+    "2314217-10",
+    "2314387-8",
+    "2312673-9",
+    "2317406-8",
+    "2309906-9",
+    "2318116-8",
+    "2315172-9",
+    "2318165-12",
+    "2318583-7",
+    "2318583-10",
+    "2171314-10",
+    "2319794-7",
+    "2242238-17",
+    "2319532-14",
+    "2319511-13",
+    "2320686-11",
+    "2258716-15",
+    "2323667-9",
+    "2322436-12",
+    "2297552-15",
+    "2331629-6",
+    "2330598-8",
+    "2325355-13",
+    "622828-9",
+    "2344790-8",
+    "2344804-8",
+    "2350706-6",
+    "2354899-8",
+    "2310837-8",
+    "2357639-9",
+    "2358527-8",
+    "2362190-9",
+    "2372099-6",
+    "2375501-8",
+    "2372983-7",
+    "2375497-8",
+    "2362947-9",
+    "2377273-8",
+    "2320643-8",
+    "2331282-8",
+    "2377516-12",
+    "2377518-12",
+    "2377675-8",
+    "2382611-10",
+    "2387266-8",
+    "2375630-8",
+    "2282142-9",
+    "2390639-8",
+    "2399396-7",
+    "2393997-9",
+    "2406964-10",
+    "2357898-11",
+    "2409114-8",
+    "2410669-8",
+    "2411730-8",
+    "2414224-6",
+    "2400068-20",
+    "2400068-23",
+    "2367548-7",
+    "2403068-11",
+    "2415411-9",
+    "2418084-8",
+    "2420014-8",
+    "2420577-7",
+    "2407112-7",
+    "2420733-7",
+    "2421859-9",
+    "2421251-7",
+    "2424952-9",
+    "2424953-8",
+    "2401881-9",
+    "2408682-8",
+    "2408948-7",
+    "2419525-7",
+    "2431123-8",
+    "2431748-8",
+    "2319364-20",
+    "2447901-6",
+    "2447264-7",
+    "2452555-8",
+    "2444417-7",
+    "2452211-7",
+    "2325845-23",
+    "2418838-7",
+    "2388491-7",
+    "2469306-8",
+    "2470275-8",
+    "2475016-8",
+    "2480330-8",
+    "2461217-7",
+    "2484059-7",
+    "2485227-8",
+    "2494658-8",
+    "2498967-8",
+    "2512384-8",
+    "2536848-6",
+    "2428615-16",
+    "2545773-8",
+    "2562149-7",
+    "2571484-9",
+    "2571484-12",
+    "2538979-10",
+    "2560611-10",
+    "2399380-8",
+    "2583550-7",
+    "2583574-8",
+    "2600277-9",
+    "2572994-8",
+    "2485383-7",
+    "2607727-7",
+    "2562289-8",
+    "2618104-8",
+    "2605243-12",
+    "2565804-8",
+    "2422887-23",
+    "2626432-8",
+    "2636281-8",
+    "2606189-10"
+  ],
+  "conflicting_orientation_ids": [],
+  "votes_after_last_window_end": {
+    "last_window_end": "2026-10-02",
+    "count": 0,
+    "ids": []
+  },
+  "count_check": {
+    "checked": 3093,
+    "mismatches": [],
+    "ok": true
+  },
+  "presence_check": {
+    "votes_without_presence_list": 0,
+    "casts_not_in_presence_list": 1
+  },
+  "kind": {
+    "classifier_version": "1.2",
+    "total": 3096,
+    "with_meaning": 3039,
+    "with_meaning_pct": 98.2,
+    "by_kind": {
+      "procedural": 1288,
+      "highlight": 702,
+      "amendment": 583,
+      "merito": 373,
+      "pec_turn": 100,
+      "final_wording": 29,
+      "other": 18,
+      "nomination": 3
+    },
+    "by_basis": {
+      "request": 828,
+      "dvs_keep_text": 636,
+      "urgency_request": 356,
+      "amendment": 488,
+      "simple_highlights_admissibility": 10,
+      "subemenda_substitutiva": 113,
+      "pec_primeiro_turno": 48,
+      "wording_amendment": 17,
+      "pec_segundo_turno": 50,
+      "senate_amendment": 81,
+      "mp_preliminary_favorable": 29,
+      "main_text": 143,
+      "committee_substitute": 93,
+      "highlight_result": 55,
+      "mp_preliminary_unreliable_wording": 21,
+      "appeal": 19,
+      "no_rule": 10,
+      "senate_substitute": 20,
+      "preference": 22,
+      "description_count_mismatch": 15,
+      "committee_opinion_no_conclusion": 3,
+      "global_substitute_amendment": 1,
+      "split_vote_request": 1,
+      "dvs_not_suppressive": 5,
+      "senate_amendment_opening": 6,
+      "two_turn_non_pec": 2,
+      "dvs_other_house_text": 1,
+      "committee_opinion": 5,
+      "final_wording": 12,
+      "pec_primeiro_turno_opening": 1,
+      "pec_turn_unknown": 1,
+      "nomination_pdl": 2,
+      "opening_senate_amendments": 1,
+      "secret_election": 1
+    }
+  },
+  "theme_coverage_pct": 99.4
+}

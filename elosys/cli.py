@@ -8,6 +8,8 @@ import sys
 from pathlib import Path
 
 from . import __version__
+from .camara import deputies as camara_deputies
+from .camara import votes as camara_votes
 from .db import connect, create_schema
 from .log import get_logger
 from .provenance import verify, write_manifest
@@ -19,6 +21,7 @@ from .rules import (
     disproportionate_expense,
     social_review,
 )
+from .senado import votes as senado_votes
 from .social import x_posts
 from .transparencia import earmarks, sanctions
 from .tse import accounts, assets, candidates, photo_urls, social
@@ -252,6 +255,27 @@ def main(argv: list[str] | None = None) -> int:
         sp = sub.add_parser(cmd, help=helptext)
         sp.add_argument("--db", default="elosys.db")
         sp.add_argument("--years", help="e.g. 2018,2020,2022,2024,2026 (default: all supported)")
+        sp.add_argument("--tmp", default=DEFAULT_TMP, help="temporary download directory")
+        sp.set_defaults(func=lambda a, _m=mod, _n=name: _run_crawler(a, _m, _n))
+
+    # Roll-call votes (ADs/votacoes.md). Absences need camara-deputies' terms (any order).
+    pcd = sub.add_parser("camara-deputies",
+                         help="ingest Câmara API /deputados (CPF, historico) -> camara_deputy(_term), "
+                              "legislatures 56-57")
+    pcd.add_argument("--db", default="elosys.db")
+    pcd.add_argument("--tmp", default=DEFAULT_TMP, help="temporary download directory")
+    pcd.set_defaults(years=None,
+                     func=lambda a: _run_crawler(a, camara_deputies, "camara_deputies"))
+
+    for cmd, mod, name, helptext in (
+        ("camara-votes", camara_votes, "camara_votes",
+         "ingest Câmara roll-call votes (annual files + /blocos) -> camara_vote*, PLEN only"),
+        ("senado-votes", senado_votes, "senado_votes",
+         "ingest Senado roll-call votes (API /votacao) -> senate_vote*, plenary only"),
+    ):
+        sp = sub.add_parser(cmd, help=helptext)
+        sp.add_argument("--db", default="elosys.db")
+        sp.add_argument("--years", help="e.g. 2023,2024,2025,2026 (default: all supported, 2019-2026)")
         sp.add_argument("--tmp", default=DEFAULT_TMP, help="temporary download directory")
         sp.set_defaults(func=lambda a, _m=mod, _n=name: _run_crawler(a, _m, _n))
 

@@ -134,19 +134,62 @@ def record_parse(con: sqlite3.Connection, *, collection_id: int, parser_name: st
     return int(cur.lastrowid)
 
 
+# Provenance rows reset_source deletes with FKs off -> query for their ids (param: source id).
+_SOURCE_ROWS = {
+    "parse": "SELECT id FROM parse WHERE collection_id IN (SELECT id FROM collection WHERE source_id = ?)",
+    "collection_file": "SELECT id FROM collection_file WHERE collection_id IN "
+                       "(SELECT id FROM collection WHERE source_id = ?)",
+    "collection": "SELECT id FROM collection WHERE source_id = ?",
+}
+
+
+def _refuse_foreign_refs(con: sqlite3.Connection, sid: int, data_tables: list[str]) -> None:
+    """Raise if a table the caller does not own points at the source's provenance rows.
+
+    With FKs on, SQLite failed the parse delete for those (social_account.declared_provenance_id
+    -> tse-social's parse); with FKs off they would dangle silently. Full scans: ~45 s on a full DB.
+    """
+    skip = set(data_tables) | set(_SOURCE_ROWS)
+    tables = [r[0] for r in con.execute("SELECT name FROM sqlite_master WHERE type = 'table'")]
+    for table in tables:
+        if table in skip:
+            continue
+        for fk in con.execute(f'PRAGMA foreign_key_list("{table}")').fetchall():
+            target, column = fk[2], fk[3]
+            if target not in _SOURCE_ROWS:
+                continue
+            hit = con.execute(
+                f'SELECT 1 FROM "{table}" WHERE "{column}" IN ({_SOURCE_ROWS[target]}) LIMIT 1',  # noqa: S608
+                (sid,)).fetchone()
+            if hit is not None:
+                raise RuntimeError(
+                    f"reset_source: {table}.{column} references {target} rows of source {sid}; "
+                    "reset or re-point that table first")
+
+
 def reset_source(con: sqlite3.Connection, source_name: str, data_tables: list[str]) -> None:
     row = con.execute("SELECT id FROM source WHERE name = ?", (source_name,)).fetchone()
+    if row is not None:
+        _refuse_foreign_refs(con, row["id"], data_tables)
     for table in data_tables:
         con.execute(f"DELETE FROM {table}")  # noqa: S608
     if row is not None:
         sid = row["id"]
-        con.execute(
-            "DELETE FROM parse WHERE collection_id IN "
-            "(SELECT id FROM collection WHERE source_id = ?)", (sid,))
-        con.execute(
-            "DELETE FROM collection_file WHERE collection_id IN "
-            "(SELECT id FROM collection WHERE source_id = ?)", (sid,))
-        con.execute("DELETE FROM collection WHERE source_id = ?", (sid,))
+        # No table indexes provenance_id, so with FKs on each deleted parse row scans every child
+        # table (hours on a full DB). Safe off: own tables emptied above, others checked first.
+        con.commit()  # PRAGMA foreign_keys is a no-op inside an open transaction
+        con.execute("PRAGMA foreign_keys = OFF")
+        try:
+            con.execute(
+                "DELETE FROM parse WHERE collection_id IN "
+                "(SELECT id FROM collection WHERE source_id = ?)", (sid,))
+            con.execute(
+                "DELETE FROM collection_file WHERE collection_id IN "
+                "(SELECT id FROM collection WHERE source_id = ?)", (sid,))
+            con.execute("DELETE FROM collection WHERE source_id = ?", (sid,))
+            con.commit()
+        finally:
+            con.execute("PRAGMA foreign_keys = ON")
     con.commit()
 
 

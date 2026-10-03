@@ -1,0 +1,845 @@
+{
+ "votes": {
+  "2019-04": [
+   {
+    "ano": 2019,
+    "casaSessao": "SF",
+    "codigoMateria": 105953,
+    "codigoSessao": 95953,
+    "codigoSessaoLegislativa": 858,
+    "codigoSessaoVotacao": 5953,
+    "dataApresentacao": "2019-04-03",
+    "dataSessao": "2019-04-03",
+    "descricaoVotacao": "Proposta de Emenda à Constituição nº 34, de 2019 (2º Turno)",
+    "ementa": "Ementa de PEC 34/2019",
+    "idProcesso": 1,
+    "identificacao": "PEC 34/2019",
+    "informeLegislativo": {
+     "casaColegiado": null,
+     "casaEnteAdm": "SF",
+     "codigoColegiado": null,
+     "data": null,
+     "id": 1,
+     "idEnteAdm": 13594,
+     "idEvento": 1,
+     "nomeColegiado": null,
+     "nomeEnteAdm": "Secretaria de Atas e Diários",
+     "numeroAutuacao": 1,
+     "siglaColegiado": null,
+     "siglaEnteAdm": "SEADI",
+     "texto": null
+    },
+    "numero": "1",
+    "numeroSessao": 1,
+    "resultadoVotacao": "A",
+    "sequencialSessao": 1,
+    "sequencialVotacao": 2561,
+    "sigla": "PEC",
+    "siglaTipoSessao": "DOR",
+    "totalVotosAbstencao": null,
+    "totalVotosNao": null,
+    "totalVotosSim": null,
+    "votacaoSecreta": "N",
+    "votos": [
+     {
+      "codigoParlamentar": 101,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Maria Silva",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PT",
+      "siglaUFParlamentar": "BA",
+      "siglaVotoParlamentar": "Sim"
+     },
+     {
+      "codigoParlamentar": 102,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Pedro Homônimo",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "MDB",
+      "siglaUFParlamentar": "MG",
+      "siglaVotoParlamentar": "Não"
+     },
+     {
+      "codigoParlamentar": 103,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Ana Diferente",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PSD",
+      "siglaUFParlamentar": "SP",
+      "siglaVotoParlamentar": "Abstenção"
+     },
+     {
+      "codigoParlamentar": 104,
+      "descricaoVotoParlamentar": "Presente – Não registrou voto",
+      "nomeParlamentar": "Carlos Deputado",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PL",
+      "siglaUFParlamentar": "RJ",
+      "siglaVotoParlamentar": "P-NRV"
+     },
+     {
+      "codigoParlamentar": 105,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Sem Nascimento",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PP",
+      "siglaUFParlamentar": "RS",
+      "siglaVotoParlamentar": "Presidente (art. 51 RISF)"
+     },
+     {
+      "codigoParlamentar": 106,
+      "descricaoVotoParlamentar": "Atividade parlamentar",
+      "nomeParlamentar": "Sem Cadastro",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PDT",
+      "siglaUFParlamentar": "AM",
+      "siglaVotoParlamentar": "AP"
+     }
+    ]
+   },
+   {
+    "ano": 2019,
+    "casaSessao": "SF",
+    "codigoMateria": 105981,
+    "codigoSessao": 95981,
+    "codigoSessaoLegislativa": 858,
+    "codigoSessaoVotacao": 5981,
+    "dataApresentacao": "2019-04-10",
+    "dataSessao": "2019-04-10",
+    "descricaoVotacao": "Arts. 8º e 9º do Projeto de Lei da Câmara nº 27, de 2017, destacados",
+    "ementa": "Ementa de PLC 27/2017",
+    "idProcesso": 1,
+    "identificacao": "PLC 27/2017",
+    "informeLegislativo": {
+     "casaColegiado": null,
+     "casaEnteAdm": "SF",
+     "codigoColegiado": null,
+     "data": null,
+     "id": 1,
+     "idEnteAdm": 13594,
+     "idEvento": 1,
+     "nomeColegiado": null,
+     "nomeEnteAdm": "Secretaria de Atas e Diários",
+     "numeroAutuacao": 1,
+     "siglaColegiado": null,
+     "siglaEnteAdm": "SEADI",
+     "texto": null
+    },
+    "numero": "1",
+    "numeroSessao": 1,
+    "resultadoVotacao": "A",
+    "sequencialSessao": 1,
+    "sequencialVotacao": null,
+    "sigla": "PLC",
+    "siglaTipoSessao": "DOR",
+    "totalVotosAbstencao": null,
+    "totalVotosNao": null,
+    "totalVotosSim": null,
+    "votacaoSecreta": "N",
+    "votos": null
+   },
+   {
+    "ano": 2019,
+    "casaSessao": "SF",
+    "codigoMateria": 109001,
+    "codigoSessao": 99001,
+    "codigoSessaoLegislativa": 858,
+    "codigoSessaoVotacao": 9001,
+    "dataApresentacao": "2019-04-11",
+    "dataSessao": "2019-04-11",
+    "descricaoVotacao": "Votação do Projeto de Lei do Senado nº 1, de 2019",
+    "ementa": "Ementa de PLS 1/2019",
+    "idProcesso": 1,
+    "identificacao": "PLS 1/2019",
+    "informeLegislativo": {
+     "casaColegiado": null,
+     "casaEnteAdm": "SF",
+     "codigoColegiado": null,
+     "data": null,
+     "id": 1,
+     "idEnteAdm": 13594,
+     "idEvento": 1,
+     "nomeColegiado": null,
+     "nomeEnteAdm": "Secretaria de Atas e Diários",
+     "numeroAutuacao": 1,
+     "siglaColegiado": null,
+     "siglaEnteAdm": "SEADI",
+     "texto": null
+    },
+    "numero": "1",
+    "numeroSessao": 1,
+    "resultadoVotacao": "A",
+    "sequencialSessao": 1,
+    "sequencialVotacao": null,
+    "sigla": "PLS",
+    "siglaTipoSessao": "PJS",
+    "totalVotosAbstencao": null,
+    "totalVotosNao": null,
+    "totalVotosSim": null,
+    "votacaoSecreta": "N",
+    "votos": [
+     {
+      "codigoParlamentar": 101,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Maria Silva",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PT",
+      "siglaUFParlamentar": "BA",
+      "siglaVotoParlamentar": "Sim"
+     }
+    ]
+   }
+  ],
+  "2019-09": [
+   {
+    "ano": 2019,
+    "casaSessao": "SF",
+    "codigoMateria": 106005,
+    "codigoSessao": 96005,
+    "codigoSessaoLegislativa": 858,
+    "codigoSessaoVotacao": 6005,
+    "dataApresentacao": "2019-09-03",
+    "dataSessao": "2019-09-03",
+    "descricaoVotacao": "PEC nº 82, de 2019, nos termos do Parecer nº 100, de 2019, da CCJ (1º Turno)",
+    "ementa": "Ementa de PEC 82/2019",
+    "idProcesso": 1,
+    "identificacao": "PEC 82/2019",
+    "informeLegislativo": {
+     "casaColegiado": "SF",
+     "casaEnteAdm": "SF",
+     "codigoColegiado": 1998,
+     "data": null,
+     "id": 1,
+     "idEnteAdm": 13594,
+     "idEvento": 1,
+     "nomeColegiado": null,
+     "nomeEnteAdm": "Secretaria de Atas e Diários",
+     "numeroAutuacao": 1,
+     "siglaColegiado": "PLEN",
+     "siglaEnteAdm": "SEADI",
+     "texto": null
+    },
+    "numero": "1",
+    "numeroSessao": 1,
+    "resultadoVotacao": "R",
+    "sequencialSessao": 1,
+    "sequencialVotacao": 2993,
+    "sigla": "PEC",
+    "siglaTipoSessao": "DOR",
+    "totalVotosAbstencao": null,
+    "totalVotosNao": null,
+    "totalVotosSim": null,
+    "votacaoSecreta": "N",
+    "votos": [
+     {
+      "codigoParlamentar": 101,
+      "descricaoVotoParlamentar": "Dispositivo não citado",
+      "nomeParlamentar": "Maria Silva",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PT",
+      "siglaUFParlamentar": "BA",
+      "siglaVotoParlamentar": "NA"
+     },
+     {
+      "codigoParlamentar": 102,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Pedro Homônimo",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "MDB",
+      "siglaUFParlamentar": "MG",
+      "siglaVotoParlamentar": "MERC"
+     },
+     {
+      "codigoParlamentar": 103,
+      "descricaoVotoParlamentar": "Presente – Obstrução Declarada",
+      "nomeParlamentar": "Ana Diferente",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PSD",
+      "siglaUFParlamentar": "SP",
+      "siglaVotoParlamentar": "P-OD"
+     },
+     {
+      "codigoParlamentar": 104,
+      "descricaoVotoParlamentar": "Não Compareceu",
+      "nomeParlamentar": "Carlos Deputado",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PL",
+      "siglaUFParlamentar": "RJ",
+      "siglaVotoParlamentar": "NCom"
+     },
+     {
+      "codigoParlamentar": 105,
+      "descricaoVotoParlamentar": "Licença saúde",
+      "nomeParlamentar": "Sem Nascimento",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PP",
+      "siglaUFParlamentar": "RS",
+      "siglaVotoParlamentar": "LS"
+     },
+     {
+      "codigoParlamentar": 106,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Sem Cadastro",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PDT",
+      "siglaUFParlamentar": "AM",
+      "siglaVotoParlamentar": "Sim"
+     }
+    ]
+   },
+   {
+    "ano": 2019,
+    "casaSessao": "SF",
+    "codigoMateria": 106008,
+    "codigoSessao": 96008,
+    "codigoSessaoLegislativa": 858,
+    "codigoSessaoVotacao": 6008,
+    "dataApresentacao": "2019-09-11",
+    "dataSessao": "2019-09-11",
+    "descricaoVotacao": "Indicação do Senhor Fulano para compor o Conselho Nacional de Justiça.",
+    "ementa": "Ementa de OFS 29/2019",
+    "idProcesso": 1,
+    "identificacao": "OFS 29/2019",
+    "informeLegislativo": {
+     "casaColegiado": null,
+     "casaEnteAdm": "SF",
+     "codigoColegiado": null,
+     "data": null,
+     "id": 1,
+     "idEnteAdm": 13594,
+     "idEvento": 1,
+     "nomeColegiado": null,
+     "nomeEnteAdm": "Secretaria de Atas e Diários",
+     "numeroAutuacao": 1,
+     "siglaColegiado": null,
+     "siglaEnteAdm": "SEADI",
+     "texto": null
+    },
+    "numero": "1",
+    "numeroSessao": 1,
+    "resultadoVotacao": "A",
+    "sequencialSessao": 1,
+    "sequencialVotacao": 3002,
+    "sigla": "OFS",
+    "siglaTipoSessao": "DOR",
+    "totalVotosAbstencao": 0,
+    "totalVotosNao": 1,
+    "totalVotosSim": 2,
+    "votacaoSecreta": "S",
+    "votos": [
+     {
+      "codigoParlamentar": 101,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Maria Silva",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PT",
+      "siglaUFParlamentar": "BA",
+      "siglaVotoParlamentar": "Votou"
+     },
+     {
+      "codigoParlamentar": 102,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Pedro Homônimo",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "MDB",
+      "siglaUFParlamentar": "MG",
+      "siglaVotoParlamentar": "Votou"
+     },
+     {
+      "codigoParlamentar": 103,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Ana Diferente",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PSD",
+      "siglaUFParlamentar": "SP",
+      "siglaVotoParlamentar": "Votou"
+     },
+     {
+      "codigoParlamentar": 104,
+      "descricaoVotoParlamentar": "Atividade parlamentar",
+      "nomeParlamentar": "Carlos Deputado",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PL",
+      "siglaUFParlamentar": "RJ",
+      "siglaVotoParlamentar": "AP"
+     }
+    ]
+   },
+   {
+    "ano": 2019,
+    "casaSessao": "SF",
+    "codigoMateria": 106009,
+    "codigoSessao": 96009,
+    "codigoSessaoLegislativa": 858,
+    "codigoSessaoVotacao": 6009,
+    "dataApresentacao": "2019-09-11",
+    "dataSessao": "2019-09-11",
+    "descricaoVotacao": "Indicação do Senhor Beltrano para compor o Conselho Nacional do MP.",
+    "ementa": "Ementa de OFS 30/2019",
+    "idProcesso": 1,
+    "identificacao": "OFS 30/2019",
+    "informeLegislativo": {
+     "casaColegiado": null,
+     "casaEnteAdm": "SF",
+     "codigoColegiado": null,
+     "data": null,
+     "id": 1,
+     "idEnteAdm": 13594,
+     "idEvento": 1,
+     "nomeColegiado": null,
+     "nomeEnteAdm": "Secretaria de Atas e Diários",
+     "numeroAutuacao": 1,
+     "siglaColegiado": null,
+     "siglaEnteAdm": "SEADI",
+     "texto": null
+    },
+    "numero": "1",
+    "numeroSessao": 1,
+    "resultadoVotacao": "A",
+    "sequencialSessao": 1,
+    "sequencialVotacao": null,
+    "sigla": "OFS",
+    "siglaTipoSessao": "DOR",
+    "totalVotosAbstencao": 0,
+    "totalVotosNao": 0,
+    "totalVotosSim": 2,
+    "votacaoSecreta": "S",
+    "votos": [
+     {
+      "codigoParlamentar": 101,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Maria Silva",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PT",
+      "siglaUFParlamentar": "BA",
+      "siglaVotoParlamentar": "Votou"
+     },
+     {
+      "codigoParlamentar": 102,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Pedro Homônimo",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "MDB",
+      "siglaUFParlamentar": "MG",
+      "siglaVotoParlamentar": "Votou"
+     },
+     {
+      "codigoParlamentar": 103,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Ana Diferente",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PSD",
+      "siglaUFParlamentar": "SP",
+      "siglaVotoParlamentar": "Votou"
+     }
+    ]
+   }
+  ],
+  "2019-10": [
+   {
+    "ano": 2019,
+    "casaSessao": "SF",
+    "codigoMateria": 106005,
+    "codigoSessao": 91000,
+    "codigoSessaoLegislativa": 858,
+    "codigoSessaoVotacao": 7001,
+    "dataApresentacao": "2019-10-02",
+    "dataSessao": "2019-10-02",
+    "descricaoVotacao": "Emenda nº 1 - PLEN ao Projeto de Lei nº 7, de 2019",
+    "ementa": "Ementa de PEC 82/2019",
+    "idProcesso": 1,
+    "identificacao": "PL 7/2019",
+    "informeLegislativo": {
+     "casaColegiado": "SF",
+     "casaEnteAdm": "SF",
+     "codigoColegiado": 1998,
+     "data": null,
+     "id": 1,
+     "idEnteAdm": 13594,
+     "idEvento": 1,
+     "nomeColegiado": null,
+     "nomeEnteAdm": "Secretaria de Atas e Diários",
+     "numeroAutuacao": 1,
+     "siglaColegiado": null,
+     "siglaEnteAdm": "SEADI",
+     "texto": null
+    },
+    "numero": "1",
+    "numeroSessao": 1,
+    "resultadoVotacao": "A",
+    "sequencialSessao": 1,
+    "sequencialVotacao": null,
+    "sigla": "PEC",
+    "siglaTipoSessao": "DOR",
+    "totalVotosAbstencao": null,
+    "totalVotosNao": null,
+    "totalVotosSim": null,
+    "votacaoSecreta": "N",
+    "votos": [
+     {
+      "codigoParlamentar": 101,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Maria Silva",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PT",
+      "siglaUFParlamentar": "BA",
+      "siglaVotoParlamentar": "Sim"
+     }
+    ]
+   },
+   {
+    "ano": 2019,
+    "casaSessao": "SF",
+    "codigoMateria": 106005,
+    "codigoSessao": 91000,
+    "codigoSessaoLegislativa": 858,
+    "codigoSessaoVotacao": 7002,
+    "dataApresentacao": "2019-10-02",
+    "dataSessao": "2019-10-02",
+    "descricaoVotacao": "Emenda nº 2 - PLEN ao Projeto de Lei nº 7, de 2019",
+    "ementa": "Ementa de PEC 82/2019",
+    "idProcesso": 1,
+    "identificacao": "PL 7/2019",
+    "informeLegislativo": {
+     "casaColegiado": "SF",
+     "casaEnteAdm": "SF",
+     "codigoColegiado": 1998,
+     "data": null,
+     "id": 1,
+     "idEnteAdm": 13594,
+     "idEvento": 1,
+     "nomeColegiado": null,
+     "nomeEnteAdm": "Secretaria de Atas e Diários",
+     "numeroAutuacao": 1,
+     "siglaColegiado": null,
+     "siglaEnteAdm": "SEADI",
+     "texto": null
+    },
+    "numero": "1",
+    "numeroSessao": 1,
+    "resultadoVotacao": "A",
+    "sequencialSessao": 1,
+    "sequencialVotacao": null,
+    "sigla": "PEC",
+    "siglaTipoSessao": "DOR",
+    "totalVotosAbstencao": null,
+    "totalVotosNao": null,
+    "totalVotosSim": null,
+    "votacaoSecreta": "N",
+    "votos": [
+     {
+      "codigoParlamentar": 101,
+      "descricaoVotoParlamentar": null,
+      "nomeParlamentar": "Maria Silva",
+      "sexoParlamentar": "F",
+      "siglaPartidoParlamentar": "PT",
+      "siglaUFParlamentar": "BA",
+      "siglaVotoParlamentar": "Sim"
+     }
+    ]
+   }
+  ]
+ },
+ "senators": {
+  "101": {
+   "DetalheParlamentar": {
+    "Metadados": {
+     "Versao": "02/10/2026"
+    },
+    "Parlamentar": {
+     "IdentificacaoParlamentar": {
+      "CodigoParlamentar": "101",
+      "NomeParlamentar": "Maria Silva",
+      "NomeCompletoParlamentar": "Maria José da Silva"
+     },
+     "DadosBasicosParlamentar": {
+      "Naturalidade": "X",
+      "UfNaturalidade": "DF",
+      "DataNascimento": "1960-01-02"
+     }
+    }
+   }
+  },
+  "102": {
+   "DetalheParlamentar": {
+    "Metadados": {
+     "Versao": "02/10/2026"
+    },
+    "Parlamentar": {
+     "IdentificacaoParlamentar": {
+      "CodigoParlamentar": "102",
+      "NomeParlamentar": "Pedro Homônimo",
+      "NomeCompletoParlamentar": "Pedro Homônimo"
+     },
+     "DadosBasicosParlamentar": {
+      "Naturalidade": "X",
+      "UfNaturalidade": "DF",
+      "DataNascimento": "1950-05-05"
+     }
+    }
+   }
+  },
+  "103": {
+   "DetalheParlamentar": {
+    "Metadados": {
+     "Versao": "02/10/2026"
+    },
+    "Parlamentar": {
+     "IdentificacaoParlamentar": {
+      "CodigoParlamentar": "103",
+      "NomeParlamentar": "Ana Diferente",
+      "NomeCompletoParlamentar": "Ana Diferente"
+     },
+     "DadosBasicosParlamentar": {
+      "Naturalidade": "X",
+      "UfNaturalidade": "DF",
+      "DataNascimento": "1970-07-07"
+     }
+    }
+   }
+  },
+  "104": {
+   "DetalheParlamentar": {
+    "Metadados": {
+     "Versao": "02/10/2026"
+    },
+    "Parlamentar": {
+     "IdentificacaoParlamentar": {
+      "CodigoParlamentar": "104",
+      "NomeParlamentar": "Carlos Deputado",
+      "NomeCompletoParlamentar": "Carlos Deputado"
+     },
+     "DadosBasicosParlamentar": {
+      "Naturalidade": "X",
+      "UfNaturalidade": "DF",
+      "DataNascimento": "1965-03-03"
+     }
+    }
+   }
+  },
+  "105": {
+   "DetalheParlamentar": {
+    "Metadados": {
+     "Versao": "02/10/2026"
+    },
+    "Parlamentar": {
+     "IdentificacaoParlamentar": {
+      "CodigoParlamentar": "105",
+      "NomeParlamentar": "Sem Nascimento",
+      "NomeCompletoParlamentar": "Sem Nascimento Souza"
+     },
+     "DadosBasicosParlamentar": {
+      "Naturalidade": "X",
+      "UfNaturalidade": "DF"
+     }
+    }
+   }
+  },
+  "106": {
+   "DetalheParlamentar": {
+    "Metadados": {
+     "Versao": "02/10/2026"
+    }
+   }
+  }
+ },
+ "orientations": {
+  "2019-04": {
+   "votacoes": [
+    {
+     "codigoVotacaoSve": 2561,
+     "sequencialVotacao": 2561,
+     "descricaoVotacao": "PEC nº 34, de 2019 (2º Turno)",
+     "dataInicioVotacao": "2019-04-04T00:30:00",
+     "dataTerminoVotacao": "2019-04-04T00:30:00",
+     "siglaTipoMateria": "PL",
+     "descricaoMateria": "PEC nº 34, de 2019 (2º Turno)",
+     "numeroMateria": 1,
+     "anoMateria": 2019,
+     "dispositivo": null,
+     "descricaoSessao": "Sessão Deliberativa Ordinária, às 14 horas",
+     "tipoSessao": "Deliberativa Ordinária",
+     "numeroSessao": 1,
+     "presidenteSessao": "X",
+     "qtdVotosSim": 1,
+     "qtdVotosNao": 1,
+     "qtdVotosAbstencao": 0,
+     "qtdObstrucoes": 0,
+     "quorumInicial": 70,
+     "quorumFinal": 70,
+     "orientacoesLideranca": [
+      {
+       "dataHora": "2019-04-04T00:30:00",
+       "partido": "Podemos",
+       "voto": "SIM"
+      },
+      {
+       "dataHora": "2019-04-04T00:30:00",
+       "partido": "PT",
+       "voto": "NÃO"
+      },
+      {
+       "dataHora": "2019-04-04T00:30:00",
+       "partido": "Governo",
+       "voto": "NÃO"
+      },
+      {
+       "dataHora": "2019-04-04T00:30:00",
+       "partido": "Banc Fem",
+       "voto": "LIVRE"
+      },
+      {
+       "dataHora": "2019-04-04T00:30:00",
+       "partido": "MDB",
+       "voto": null
+      }
+     ],
+     "votosParlamentar": [],
+     "votosLideranca": []
+    },
+    {
+     "codigoVotacaoSve": 2562,
+     "sequencialVotacao": 2562,
+     "descricaoVotacao": "Veto nº 1, de 2019",
+     "dataInicioVotacao": "2019-04-03T18:00:00",
+     "dataTerminoVotacao": "2019-04-03T18:00:00",
+     "siglaTipoMateria": "PL",
+     "descricaoMateria": "Veto nº 1, de 2019",
+     "numeroMateria": 1,
+     "anoMateria": 2019,
+     "dispositivo": null,
+     "descricaoSessao": "Sessão Conjunta do Congresso Nacional",
+     "tipoSessao": "Conjunta",
+     "numeroSessao": 1,
+     "presidenteSessao": "X",
+     "qtdVotosSim": 40,
+     "qtdVotosNao": 10,
+     "qtdVotosAbstencao": 0,
+     "qtdObstrucoes": 0,
+     "quorumInicial": 70,
+     "quorumFinal": 70,
+     "orientacoesLideranca": [
+      {
+       "dataHora": "2019-04-03T18:00:00",
+       "partido": "PT",
+       "voto": "SIM"
+      }
+     ],
+     "votosParlamentar": [],
+     "votosLideranca": []
+    }
+   ]
+  },
+  "2019-09": {
+   "votacoes": [
+    {
+     "codigoVotacaoSve": 2993,
+     "sequencialVotacao": 2993,
+     "descricaoVotacao": "Matéria",
+     "dataInicioVotacao": "2019-09-03T17:00:00",
+     "dataTerminoVotacao": "2019-09-03T17:00:00",
+     "siglaTipoMateria": "PL",
+     "descricaoMateria": "Matéria",
+     "numeroMateria": 1,
+     "anoMateria": 2019,
+     "dispositivo": null,
+     "descricaoSessao": "Sessão Deliberativa Ordinária, às 14 horas",
+     "tipoSessao": "Deliberativa Ordinária",
+     "numeroSessao": 1,
+     "presidenteSessao": "X",
+     "qtdVotosSim": 9,
+     "qtdVotosNao": 9,
+     "qtdVotosAbstencao": 0,
+     "qtdObstrucoes": 0,
+     "quorumInicial": 70,
+     "quorumFinal": 70,
+     "orientacoesLideranca": [
+      {
+       "dataHora": "2019-09-03T17:00:00",
+       "partido": "PT",
+       "voto": "SIM"
+      }
+     ],
+     "votosParlamentar": [],
+     "votosLideranca": []
+    },
+    {
+     "codigoVotacaoSve": 9100,
+     "sequencialVotacao": 3003,
+     "descricaoVotacao": "Matéria",
+     "dataInicioVotacao": "2019-09-11T16:00:00",
+     "dataTerminoVotacao": "2019-09-11T16:00:00",
+     "siglaTipoMateria": "PL",
+     "descricaoMateria": "Matéria",
+     "numeroMateria": 1,
+     "anoMateria": 2019,
+     "dispositivo": null,
+     "descricaoSessao": "Sessão Deliberativa Ordinária, às 14 horas",
+     "tipoSessao": "Deliberativa Ordinária",
+     "numeroSessao": 1,
+     "presidenteSessao": "X",
+     "qtdVotosSim": 2,
+     "qtdVotosNao": 0,
+     "qtdVotosAbstencao": 0,
+     "qtdObstrucoes": 0,
+     "quorumInicial": 70,
+     "quorumFinal": 70,
+     "orientacoesLideranca": [
+      {
+       "dataHora": "2019-09-11T16:00:00",
+       "partido": "PROGRES",
+       "voto": "OBSTRUÇÃO"
+      },
+      {
+       "dataHora": "2019-09-11T16:00:00",
+       "partido": "Bloco Parlamentar X",
+       "voto": "SIM"
+      },
+      {
+       "dataHora": "2019-09-11T16:00:00",
+       "partido": "Liderança Y",
+       "voto": "NÃO"
+      }
+     ],
+     "votosParlamentar": [],
+     "votosLideranca": []
+    }
+   ]
+  },
+  "2019-10": {
+   "votacoes": [
+    {
+     "codigoVotacaoSve": 9200,
+     "sequencialVotacao": 3100,
+     "descricaoVotacao": "Matéria",
+     "dataInicioVotacao": "2019-10-02T15:00:00",
+     "dataTerminoVotacao": "2019-10-02T15:00:00",
+     "siglaTipoMateria": "PL",
+     "descricaoMateria": "Matéria",
+     "numeroMateria": 1,
+     "anoMateria": 2019,
+     "dispositivo": null,
+     "descricaoSessao": "Sessão Deliberativa Ordinária, às 14 horas",
+     "tipoSessao": "Deliberativa Ordinária",
+     "numeroSessao": 1,
+     "presidenteSessao": "X",
+     "qtdVotosSim": 1,
+     "qtdVotosNao": 0,
+     "qtdVotosAbstencao": 0,
+     "qtdObstrucoes": 0,
+     "quorumInicial": 70,
+     "quorumFinal": 70,
+     "orientacoesLideranca": [
+      {
+       "dataHora": "2019-10-02T15:00:00",
+       "partido": "PT",
+       "voto": "SIM"
+      }
+     ],
+     "votosParlamentar": [],
+     "votosLideranca": []
+    }
+   ]
+  }
+ }
+}

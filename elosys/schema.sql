@@ -581,3 +581,296 @@ CREATE TABLE IF NOT EXISTS social_post_review (
     UNIQUE (social_post_id, model)
 );
 CREATE INDEX IF NOT EXISTS ix_social_post_review_sev ON social_post_review (severity);
+
+-- DATA: roll-call votes - Câmara dos Deputados (dadosabertos.camara.leg.br)
+-- Only nominal PLENÁRIO votes (siglaOrgao = 'PLEN' and present in votacoesVotos).
+-- Cross-table keys are the source's natural ids, WITHOUT foreign keys: each crawler
+-- (camara-votes, camara-deputies) wipes only its own tables in reset_source, and a FK
+-- across crawlers would block that wipe. Agreement/fidelity/presence are computed at
+-- query time (web/src/lib/votes-queries.ts): no cross-row aggregate is stored here.
+-- Per-row interpretations (normalized vote/orientation, kind/meaning_code, bench match,
+-- deputy -> people) ARE stored, always next to the raw value and the basis that produced
+-- them (*_raw, kind_basis, match_basis/match_evidence, unmatched_reason).
+-- INSERT CONTRACT: never INSERT OR IGNORE into these tables - OR IGNORE also swallows
+-- CHECK and NOT NULL violations, so a bad row silently disappears. Use
+-- INSERT ... ON CONFLICT (<ux_* columns>) DO NOTHING (or plain INSERT), set
+-- parse.rows_extracted from the rows actually inserted and check it against
+-- SELECT count(*) FROM <table> WHERE provenance_id = <parse id>.
+
+CREATE TABLE IF NOT EXISTS camara_vote (
+    id                  INTEGER PRIMARY KEY,
+    camara_vote_id      TEXT NOT NULL,       -- votacoes.id ('2438467-47'), opaque
+    event_id            INTEGER,             -- idEvento (-> camara_session_presence.event_id)
+    date                TEXT NOT NULL,       -- data, YYYY-MM-DD (never votacoesVotos.dataHoraVoto)
+    registered_at       TEXT,                -- dataHoraRegistro, verbatim Brasília LOCAL time, no offset (NOT UTC): '2025-11-05T12:41:17'
+    legislature         INTEGER NOT NULL,    -- 56 (2019-02-01..2023-01-31) | 57 (2023-02-01..2027-01-31), from date
+    approved            INTEGER CHECK (approved IN (0, 1)),  -- aprovacao: 1 | 0 | NULL (empty)
+    yes_count           INTEGER,             -- votosSim
+    no_count            INTEGER,             -- votosNao
+    other_count         INTEGER,             -- votosOutros
+    description         TEXT,                -- descricao, verbatim ('Aprovado o Projeto...', 'Mantido o texto...')
+    opening_description TEXT,                -- ultimaAberturaVotacao_descricao ('Votação em turno único.'); often empty
+    -- last_filed_*: último documento apresentado na proposição antes da votação, NÃO o item votado
+    -- (2192459-636 points to a Requerimento de Informação); use opening_description + description.
+    last_filed_proposition_id INTEGER,       -- ultimaApresentacaoProposicao_idProposicao; NULL when '0'
+    last_filed_description    TEXT,          -- ultimaApresentacaoProposicao_descricao
+    is_secret           INTEGER NOT NULL DEFAULT 0 CHECK (is_secret IN (0, 1)),  -- 1 = casts say who voted, not how (empty voto)
+    kind                TEXT,                -- classifier: 'merito' | 'pec_turn' | 'highlight' | 'amendment' | 'final_wording' | 'procedural' | 'nomination' | 'other'
+    kind_basis          TEXT,                -- which classifier pattern matched (audit trail of kind/meaning_code)
+    meaning_code        TEXT,                -- what 'Sim' means (key into web vote-meaning.ts); NULL = unsure
+    provenance_id       INTEGER NOT NULL REFERENCES parse(id),
+    collected_at        TEXT NOT NULL
+);
+CREATE UNIQUE INDEX IF NOT EXISTS ux_camara_vote ON camara_vote (camara_vote_id);
+CREATE INDEX IF NOT EXISTS ix_camara_vote_date  ON camara_vote (date);
+CREATE INDEX IF NOT EXISTS ix_camara_vote_event ON camara_vote (event_id) WHERE event_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS ix_camara_vote_last_filed_proposition
+    ON camara_vote (last_filed_proposition_id) WHERE last_filed_proposition_id IS NOT NULL;
+
+CREATE TABLE IF NOT EXISTS camara_vote_proposition (
+    id              INTEGER PRIMARY KEY,
+    camara_vote_id  TEXT NOT NULL,           -- votacoesProposicoes.idVotacao (-> camara_vote)
+    proposition_id  INTEGER NOT NULL,        -- proposicao_id
+    type_abbr       TEXT,                    -- proposicao_siglaTipo ('PL', 'PEC', 'MPV'...)
+    number          INTEGER,                 -- proposicao_numero
+    year            INTEGER,                 -- proposicao_ano
+    title           TEXT,                    -- proposicao_titulo ('PL 2215/2024')
+    ementa          TEXT,                    -- proposicao_ementa
+    provenance_id   INTEGER NOT NULL REFERENCES parse(id),
+    collected_at    TEXT NOT NULL
+);
+CREATE UNIQUE INDEX IF NOT EXISTS ux_camara_vote_proposition
+    ON camara_vote_proposition (camara_vote_id, proposition_id);
+CREATE INDEX IF NOT EXISTS ix_camara_vote_proposition_prop ON camara_vote_proposition (proposition_id);
+
+CREATE TABLE IF NOT EXISTS camara_proposition_theme (
+    id              INTEGER PRIMARY KEY,
+    proposition_id  INTEGER NOT NULL,        -- proposicoesTemas: proposition id (from uriProposicao)
+    theme_code      INTEGER NOT NULL,        -- codTema
+    theme           TEXT,                    -- tema ('Educação', 'Saúde'...)
+    provenance_id   INTEGER NOT NULL REFERENCES parse(id),
+    collected_at    TEXT NOT NULL
+);
+CREATE UNIQUE INDEX IF NOT EXISTS ux_camara_proposition_theme
+    ON camara_proposition_theme (proposition_id, theme_code);
+CREATE INDEX IF NOT EXISTS ix_camara_proposition_theme_code ON camara_proposition_theme (theme_code);
+
+CREATE TABLE IF NOT EXISTS camara_vote_cast (
+    id               INTEGER PRIMARY KEY,
+    camara_vote_id   TEXT NOT NULL,          -- votacoesVotos.idVotacao (-> camara_vote)
+    camara_deputy_id INTEGER NOT NULL,       -- deputado_id (-> camara_deputy, soft)
+    name             TEXT,                   -- deputado_nome
+    party_abbr       TEXT,                   -- deputado_siglaPartido, AT VOTE TIME (not current party)
+    state            TEXT,                   -- deputado_siglaUf
+    vote_raw         TEXT NOT NULL,          -- voto, verbatim ('Sim' | 'Não' | 'Artigo 17' | 'Obstrução' | 'Abstenção' | '')
+    vote             TEXT NOT NULL           -- normalized; 'presiding' = Artigo 17, 'secret' = empty voto (never no/abstention)
+        CHECK (vote IN ('yes', 'no', 'abstention', 'obstruction', 'presiding', 'secret')),
+    provenance_id    INTEGER NOT NULL REFERENCES parse(id),
+    collected_at     TEXT NOT NULL
+);
+CREATE UNIQUE INDEX IF NOT EXISTS ux_camara_vote_cast ON camara_vote_cast (camara_vote_id, camara_deputy_id);
+CREATE INDEX IF NOT EXISTS ix_camara_vote_cast_party  ON camara_vote_cast (party_abbr, camara_vote_id);
+CREATE INDEX IF NOT EXISTS ix_camara_vote_cast_deputy ON camara_vote_cast (camara_deputy_id);
+
+CREATE TABLE IF NOT EXISTS camara_vote_orientation (
+    id               INTEGER PRIMARY KEY,
+    camara_vote_id   TEXT NOT NULL,          -- votacoesOrientacoes.idVotacao (-> camara_vote)
+    bench_label      TEXT NOT NULL,          -- siglaBancada, verbatim (may be truncated: 'Bl PlFdrPtUniPp...')
+    bench_kind       TEXT NOT NULL           -- leadership rows (government..opposition) never orient a party
+        CHECK (bench_kind IN ('party', 'federation', 'bloc', 'government', 'majority', 'minority', 'opposition', 'other')),
+    bench_norm       TEXT,                   -- label after alias normalization ('GOV.' -> 'Governo', 'Podemos' -> 'PODE', case/accents)
+    orientation_raw  TEXT NOT NULL,          -- orientacao, verbatim ('Sim' | 'Não' | 'Obstrução' | 'Liberado' | '')
+    orientation      TEXT NOT NULL           -- normalized; 'free' = Liberado, 'none' = empty (bench did not orient),
+                                             -- 'other' = unknown raw value (kept in orientation_raw; never counted for fidelity)
+        CHECK (orientation IN ('yes', 'no', 'obstruction', 'free', 'none', 'other')),
+    provenance_id    INTEGER NOT NULL REFERENCES parse(id),
+    collected_at     TEXT NOT NULL
+);
+CREATE UNIQUE INDEX IF NOT EXISTS ux_camara_vote_orientation
+    ON camara_vote_orientation (camara_vote_id, bench_label);
+
+CREATE TABLE IF NOT EXISTS camara_vote_party_bench (
+    id               INTEGER PRIMARY KEY,
+    camara_vote_id   TEXT NOT NULL,          -- -> camara_vote
+    party_abbr       TEXT NOT NULL,          -- a camara_vote_cast.party_abbr present in this vote
+    bench_label      TEXT,                   -- camara_vote_orientation.bench_label that oriented this party; NULL = sem orientação identificada
+    match_basis      TEXT                    -- 'bloc_curated' only with a cited official URL (benches.py); NULL = unmatched
+        CHECK (match_basis IN ('party', 'federation', 'bloc_api', 'bloc_curated', 'bloc_label')),
+    match_evidence   TEXT,                   -- what proves the membership: /blocos id (federation | bloc_api), the official
+                                             -- URL cited in benches.py (bloc_curated) or the untruncated label quoted
+                                             -- (bloc_label); NULL for 'party' and unmatched rows
+    unmatched_reason TEXT,                   -- why bench_label is NULL: 'ambiguous' | 'bloc_unresolved' | 'no_bench_row' | 'no_party'
+    provenance_id    INTEGER NOT NULL REFERENCES parse(id),
+    collected_at     TEXT NOT NULL,
+    -- every non-party basis (federation, bloc_api, bloc_curated, bloc_label) needs its evidence
+    CHECK (match_evidence IS NOT NULL OR match_basis IS NULL OR match_basis = 'party')
+);
+CREATE UNIQUE INDEX IF NOT EXISTS ux_camara_vote_party_bench
+    ON camara_vote_party_bench (camara_vote_id, party_abbr);
+
+CREATE TABLE IF NOT EXISTS camara_session_presence (
+    id               INTEGER PRIMARY KEY,
+    event_id         INTEGER NOT NULL,       -- eventosPresencaDeputados.idEvento (= camara_vote.event_id); only events of stored votes
+    camara_deputy_id INTEGER NOT NULL,       -- idDeputado
+    provenance_id    INTEGER NOT NULL REFERENCES parse(id),
+    collected_at     TEXT NOT NULL
+);
+CREATE UNIQUE INDEX IF NOT EXISTS ux_camara_session_presence
+    ON camara_session_presence (event_id, camara_deputy_id);
+CREATE INDEX IF NOT EXISTS ix_camara_session_presence_deputy ON camara_session_presence (camara_deputy_id);
+
+CREATE TABLE IF NOT EXISTS camara_deputy (
+    id                 INTEGER PRIMARY KEY,
+    camara_deputy_id   INTEGER NOT NULL,     -- API /deputados/{id}: dados.id
+    parliamentary_name TEXT,                 -- ultimoStatus.nomeEleitoral
+    civil_name         TEXT,                 -- nomeCivil
+    cpf                TEXT,                 -- dados.cpf, 11 digits (deputados.csv cpf column is always empty)
+    birth_date         TEXT,                 -- dataNascimento, YYYY-MM-DD
+    birth_state        TEXT,                 -- ufNascimento
+    person_id          INTEGER REFERENCES people(id),  -- never creates people; NULL = unmatched
+    match_basis        TEXT                  -- cpf == people.cpf (cpf_trusted=1) AND birth date / normalized civil name agree
+        CHECK (match_basis IN ('cpf+nascimento', 'cpf+nome')),
+    unmatched_reason   TEXT,                 -- why person_id is NULL
+    provenance_id      INTEGER NOT NULL REFERENCES parse(id),
+    collected_at       TEXT NOT NULL
+);
+CREATE UNIQUE INDEX IF NOT EXISTS ux_camara_deputy ON camara_deputy (camara_deputy_id);
+CREATE INDEX IF NOT EXISTS ix_camara_deputy_person ON camara_deputy (person_id) WHERE person_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS ix_camara_deputy_cpf    ON camara_deputy (cpf) WHERE cpf IS NOT NULL;
+
+-- One row per status change in /deputados/{id}/historico. The crawler SKIPS rows with
+-- situacao NULL: they are artefacts, not status changes (one per past legislature, all
+-- stamped 2023-02-01T00:00, descricaoStatus 'Nome/Partido no início da legislatura',
+-- listed before the real 2023-02-01T12:05 'Exercício' row). The API lists rows grouped by
+-- legislature, not chronologically: sort by started_at before deriving ended_at.
+-- Status changes can happen mid-day (e.g. 'Licença' at 18:01) and the term ends on an
+-- explicit FIM_MANDATO row at YYYY-01-31T23:59, so intervals are [started_at, ended_at)
+-- at minute precision, never "day before the next change".
+-- Rows dated before the legislature's Feb 1st start are skipped too (e.g. a leg-57
+-- 'Exercício' "Alteração de partido" at 2022-03-31 for a suplente sworn in on 2026-06-30).
+-- Absence logic must filter on in_office, NOT on situation = 'Exercício'.
+CREATE TABLE IF NOT EXISTS camara_deputy_term (
+    id                 INTEGER PRIMARY KEY,
+    camara_deputy_id   INTEGER NOT NULL,     -- -> camara_deputy
+    legislature        INTEGER NOT NULL,     -- /historico idLegislatura
+    started_at         TEXT NOT NULL,        -- /historico dataHora, verbatim Brasília LOCAL time, no offset (NOT UTC): '2023-02-01T12:05'
+    start_date         TEXT NOT NULL,        -- date part of started_at, YYYY-MM-DD
+    ended_at           TEXT,                 -- started_at of the next status row of the same deputy + legislature; last row of a FINISHED legislature: 'YYYY-01-31T23:59'; NULL = ongoing
+    situation          TEXT,                 -- /historico situacao, verbatim ('Exercício', 'Licença', 'Afastado', 'FIM_MANDATO'...)
+    status_description TEXT,                 -- /historico descricaoStatus, verbatim
+    in_office          INTEGER NOT NULL      -- 1 = could vote / be absent: situation 'Exercício', or 'CONVOCADO' with
+        CHECK (in_office IN (0, 1)),         --   status_description "Entrada - Reassunção ..." (suplente called back); else 0
+    provenance_id      INTEGER NOT NULL REFERENCES parse(id),
+    collected_at       TEXT NOT NULL
+);
+CREATE UNIQUE INDEX IF NOT EXISTS ux_camara_deputy_term
+    ON camara_deputy_term (camara_deputy_id, legislature, started_at);
+
+-- DATA: roll-call votes - Senado Federal (legis.senado.leg.br/dadosabertos)
+-- From /dadosabertos/votacao (monthly windows). Party orientation comes from a second feed
+-- (plenario/votacao/orientacaoBancada) and covers only part of the votes, see
+-- senate_vote_orientation. Absences ARE listed per vote (unlike the Câmara). Only PLENÁRIO votes
+-- are stored; house/body keep the source fields so that filter can be audited.
+-- Same per-row rule as the Câmara section: no cross-row aggregate is stored; normalized
+-- values sit next to their raw value and basis.
+-- INSERT CONTRACT: never INSERT OR IGNORE into these tables - OR IGNORE also swallows
+-- CHECK and NOT NULL violations, so a bad row silently disappears. Use
+-- INSERT ... ON CONFLICT (<ux_* columns>) DO NOTHING (or plain INSERT), set
+-- parse.rows_extracted from the rows actually inserted and check it against
+-- SELECT count(*) FROM <table> WHERE provenance_id = <parse id>.
+
+CREATE TABLE IF NOT EXISTS senate_vote (
+    id               INTEGER PRIMARY KEY,
+    senate_vote_code INTEGER NOT NULL,       -- codigoSessaoVotacao (one per vote)
+    session_code     INTEGER,                -- codigoSessao (several votes per session)
+    house            TEXT,                   -- casaSessao, verbatim ('SF' = Senado Federal)
+    body             TEXT,                   -- informeLegislativo.siglaColegiado, verbatim ('PLEN' = Plenário); NULL when the API omits informeLegislativo
+    date             TEXT NOT NULL,          -- dataSessao, YYYY-MM-DD
+    matter_code      INTEGER,                -- codigoMateria
+    identification   TEXT,                   -- identificacao ('PLP 192/2023')
+    description      TEXT,                   -- descricaoVotacao, verbatim
+    ementa           TEXT,                   -- ementa
+    result_raw       TEXT,                   -- resultadoVotacao, verbatim code: 'A' = aprovada, 'R' = rejeitada, any other kept raw
+    is_secret        INTEGER NOT NULL DEFAULT 0 CHECK (is_secret IN (0, 1)),  -- votacaoSecreta: 'S' -> 1, 'N' -> 0
+    yes_count        INTEGER,                -- totalVotosSim (NULL when the API omits it)
+    no_count         INTEGER,                -- totalVotosNao
+    abstention_count INTEGER,                -- totalVotosAbstencao
+    kind             TEXT,                   -- classifier, same values as camara_vote.kind
+    kind_basis       TEXT,                   -- which classifier pattern matched
+    meaning_code     TEXT,                   -- what 'Sim' means; NULL = unsure
+    provenance_id    INTEGER NOT NULL REFERENCES parse(id),
+    collected_at     TEXT NOT NULL,
+    informe_text     TEXT                    -- informeLegislativo.texto verbatim (NULL = absent): the
+                                             -- matter's record for the whole session, same for all its
+                                             -- votes ("Rejeitada a Emenda nº 12 ... Sim 12; Não 50"); says
+                                             -- what happened to the text, result_raw = destaque's fate
+);
+CREATE UNIQUE INDEX IF NOT EXISTS ux_senate_vote ON senate_vote (senate_vote_code);
+CREATE INDEX IF NOT EXISTS ix_senate_vote_date ON senate_vote (date);
+
+CREATE TABLE IF NOT EXISTS senate_vote_cast (
+    id               INTEGER PRIMARY KEY,
+    senate_vote_code INTEGER NOT NULL,       -- -> senate_vote
+    senator_code     INTEGER NOT NULL,       -- votos[].codigoParlamentar (-> senate_senator, soft)
+    name             TEXT,                   -- nomeParlamentar
+    party_abbr       TEXT,                   -- siglaPartidoParlamentar: party at vote time, but
+                                             -- the sigla /votacao publishes now (renamed parties
+                                             -- appear with the current name)
+    state            TEXT,                   -- siglaUFParlamentar
+    vote_raw         TEXT NOT NULL,          -- siglaVotoParlamentar, verbatim ('Sim', 'P-NRV', 'AP', 'NCom', 'Votou', 'NA'...)
+    vote             TEXT NOT NULL           -- Votou -> secret, P-NRV -> present_not_voted, AP/LS/LP/MIS -> absent_justified,
+                                             -- NCom -> absent, 'Presidente (art. 51 RISF)' -> presiding, unknown -> other
+        CHECK (vote IN ('yes', 'no', 'abstention', 'obstruction', 'secret', 'present_not_voted',
+                        'absent_justified', 'absent', 'presiding', 'other')),
+    provenance_id    INTEGER NOT NULL REFERENCES parse(id),
+    collected_at     TEXT NOT NULL
+);
+CREATE UNIQUE INDEX IF NOT EXISTS ux_senate_vote_cast ON senate_vote_cast (senate_vote_code, senator_code);
+CREATE INDEX IF NOT EXISTS ix_senate_vote_cast_party   ON senate_vote_cast (party_abbr, senate_vote_code);
+CREATE INDEX IF NOT EXISTS ix_senate_vote_cast_senator ON senate_vote_cast (senator_code);
+
+CREATE TABLE IF NOT EXISTS senate_senator (
+    id                 INTEGER PRIMARY KEY,
+    senator_code       INTEGER NOT NULL,     -- /senador/{cod}: CodigoParlamentar
+    parliamentary_name TEXT,                 -- NomeParlamentar
+    full_name          TEXT,                 -- NomeCompletoParlamentar
+    birth_date         TEXT,                 -- DataNascimento, YYYY-MM-DD
+    person_id          INTEGER REFERENCES people(id),  -- never creates people; NULL = unmatched
+    match_basis        TEXT                  -- normalized full_name + birth_date vs politician_history (senator/suplente), exactly one person
+        CHECK (match_basis IN ('nome+nascimento')),
+    unmatched_reason   TEXT,                 -- why person_id is NULL (homonyms, not found...)
+    provenance_id      INTEGER NOT NULL REFERENCES parse(id),
+    collected_at       TEXT NOT NULL
+);
+CREATE UNIQUE INDEX IF NOT EXISTS ux_senate_senator ON senate_senator (senator_code);
+CREATE INDEX IF NOT EXISTS ix_senate_senator_person ON senate_senator (person_id) WHERE person_id IS NOT NULL;
+
+-- Party/leadership orientation per Senado plenary vote, from the voting-panel feed
+-- /dadosabertos/plenario/votacao/orientacaoBancada/{ini}/{fim}. That feed has no
+-- codigoSessaoVotacao: rows are linked to senate_vote by link_basis; panel votes that link
+-- to no stored vote are counted in the crawler report, never inserted.
+CREATE TABLE IF NOT EXISTS senate_vote_orientation (
+    id               INTEGER PRIMARY KEY,
+    senate_vote_code INTEGER NOT NULL,       -- -> senate_vote (codigoSessaoVotacao)
+    panel_vote_code  INTEGER NOT NULL,       -- codigoVotacaoSve, the panel feed's own vote id
+    link_basis       TEXT NOT NULL           -- 'sequencial': same sequencialVotacao + tally;
+                                             -- 'placar': same date + Sim/Não tally, one candidate
+        CHECK (link_basis IN ('sequencial', 'placar')),
+    bench_label      TEXT NOT NULL,          -- orientacoesLideranca[].partido, verbatim ('Podemos')
+    bench_norm       TEXT,                   -- comparable to senate_vote_cast.party_abbr ('PODE');
+                                             -- NULL when the label is not a single party
+    bench_kind       TEXT NOT NULL
+        CHECK (bench_kind IN ('party', 'bloc', 'government', 'majority', 'minority',
+                              'opposition', 'other')),
+    orientation_raw  TEXT NOT NULL,          -- orientacoesLideranca[].voto, verbatim; '' = API null
+    orientation      TEXT NOT NULL           -- SIM yes, NÃO no, OBSTRUÇÃO obstruction, LIVRE free,
+                                             -- null none, anything else other (raw kept)
+        CHECK (orientation IN ('yes', 'no', 'obstruction', 'free', 'none', 'other')),
+    oriented_at      TEXT,                   -- orientacoesLideranca[].dataHora, verbatim
+    provenance_id    INTEGER NOT NULL REFERENCES parse(id),
+    collected_at     TEXT NOT NULL
+);
+CREATE UNIQUE INDEX IF NOT EXISTS ux_senate_vote_orientation
+    ON senate_vote_orientation (senate_vote_code, bench_label);
+CREATE INDEX IF NOT EXISTS ix_senate_vote_orientation_norm
+    ON senate_vote_orientation (bench_norm, senate_vote_code) WHERE bench_norm IS NOT NULL;
