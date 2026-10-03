@@ -30,8 +30,8 @@
 ## 1. O que é o EloSys
 
 Um cruzamento de **dados públicos brasileiros** (TSE, Receita Federal, Portal da
-Transparência, redes sociais que o próprio candidato declarou à Justiça
-Eleitoral) organizado **por pessoa**, com duas coisas que a maioria dos projetos
+Transparência, votações da Câmara e do Senado, redes sociais que o próprio
+candidato declarou à Justiça Eleitoral) organizado **por pessoa**, com duas coisas que a maioria dos projetos
 parecidos não tem:
 
 - **Proveniência em cada campo**: todo dado mostrado na tela sabe de qual
@@ -54,7 +54,7 @@ parecidos não tem:
 
 - **`elosys/`** (Python) — um conjunto de **coletores independentes**
   (`elosys/tse/*.py`, `elosys/receita/cnpj.py`, `elosys/transparencia/sanctions.py`,
-  `elosys/social/*.py`) e **regras de detecção** (`elosys/rules/*.py`) que juntos
+  `elosys/social/*.py`, `elosys/camara/*.py`, `elosys/senado/votes.py`) e **regras de detecção** (`elosys/rules/*.py`) que juntos
   constroem o banco do zero a cada rodada. Cada um roda via `elosys <comando>`
   (ver `elosys/cli.py`).
 - **`elosys.db`** — um único arquivo SQLite. É um *artefato de build*: não é
@@ -175,6 +175,9 @@ doação/despesa. Só uma pessoa que realmente concorreu a cargo eletivo entra e
 | `elosys/receita/cnpj.py` | BrasilAPI (proxy da Receita Federal) | `company_registry`, `company_partner` (quadro societário) | por CNPJ; sócio pessoa física vem com CPF **mascarado** pela própria fonte |
 | `elosys/transparencia/sanctions.py` | Portal da Transparência — CEIS + CNEP (snapshot do dia, sem histórico por ano) | `sanction` | por CPF/CNPJ; nunca cria `people` novo, só liga a quem já existe |
 | `elosys/social/x_posts.py` + `apify.py` | X/Twitter, via Apify, só das contas **declaradas ao TSE** | `social_account`, `social_post` | nunca "adivinha" um handle |
+| `elosys/camara/deputies.py` | API da Câmara: `/deputados/{id}` (CPF, nascimento) e `/historico` (cada mudança de situação do mandato) | `camara_deputy`, `camara_deputy_term` | CPF da Câmara + nascimento ou nome civil; nunca cria `people` |
+| `elosys/camara/votes.py` | Arquivos anuais da Câmara (`votacoes*`, `eventosPresencaDeputados`, `proposicoesTemas`) + API `/blocos` | `camara_vote` e filhas (votos, orientações, bancada por partido, proposições, temas, presença) | por `camara_deputy_id` (ligado a `people` via `camara_deputy`) |
+| `elosys/senado/votes.py` | API do Senado: `/votacao` (mensal), `/senador/{cod}.json`, painel `orientacaoBancada` | `senate_vote`, `senate_vote_cast`, `senate_vote_orientation`, `senate_senator` | nome completo + nascimento contra `politician_history`; nunca cria `people` |
 
 Pontos que valem destacar:
 
@@ -194,6 +197,32 @@ Pontos que valem destacar:
   `manifest.json`/`elosys verify` — um post pode ser apagado a qualquer
   momento, então a prova de integridade fica junto do próprio registro
   (`raw_json` + `raw_sha256` + `retrieved_at`), não num arquivo externo.
+
+### Votações nominais (Câmara e Senado)
+
+Os três coletores de votação (`elosys camara-deputies`, `camara-votes`,
+`senado-votes`) cobrem só votações **nominais do Plenário**, 2019–2026 (o
+`camara-deputies` guarda os deputados e seus períodos de exercício), e seguem a mesma disciplina do resto: cada voto guarda o valor bruto da fonte ao
+lado do normalizado, e toda interpretação diz de onde saiu. Três pontos
+fogem do óbvio (detalhes em `ADs/votacoes.md`):
+
+- **O que o "Sim" significa** é lido da descrição oficial por regras
+  versionadas (`elosys/camara/vote_kind.py`) e gravado na própria votação
+  (`kind`, `meaning_code`, `kind_basis`). Quando a regra não reconhece o texto,
+  o código fica NULL e a tela diz "interpretação indisponível" — nunca chuta.
+- **Qual orientação vale para cada partido** na Câmara segue uma ordem fixa
+  (partido → federação → bloco com evidência datada) e, sem evidência, fica
+  "sem orientação identificada". A composição de bloco vem do próprio rótulo
+  quando ele lista todos os partidos sem corte, ou de documento oficial citado no
+  código (Ordem do Dia, notícia da Câmara), com a API `/blocos` usada só dentro
+  dessas janelas — nunca de suposição.
+- **Fidelidade, concordância e presença não ficam no banco**: são calculadas
+  na consulta do app web a partir dos votos, então mudar a definição não exige
+  recoletar.
+
+Cada um desses coletores grava tudo numa transação só: se falhar no meio, as
+tabelas dele ficam vazias (nunca pela metade) e basta rodar de novo. A CLDF
+ficou de fora: não publica votação em dado estruturado, só no Diário em PDF.
 
 ### Por que `receita/cnpj.py` e `photo_urls.py` não são rewrite-only
 
@@ -464,6 +493,17 @@ Outras formas de conferir:
   de rede social pode ser apagado a qualquer momento — a prova de integridade
   fica no próprio registro (hash + data de coleta), não num arquivo externo
   verificável por terceiros do mesmo jeito que o resto.
+- **Votações da Câmara não passam no `elosys verify` pelo hash**: os arquivos
+  anuais são regerados todo dia, então o SHA-256 muda mesmo sem dado novo. A
+  conferência dessa fonte é pelas contagens do `camara_votes_report.json`. As
+  respostas de API que descrevem o estado atual (mês corrente do Senado,
+  `/deputados/{id}`, `/blocos/{id}/partidos`) também podem acusar `CHANGED` quando
+  a fonte muda.
+- **Orientação de partido é incompleta de propósito**: na Câmara, bloco com
+  rótulo truncado e sem documento oficial datado fica "sem orientação
+  identificada"; no Senado, o painel só publica orientação em parte das
+  votações. As janelas de bloco curadas terminam em 2026-10-02 e precisam ser
+  estendidas a cada recoleta (ver `ADs/votacoes.md`, Pontos em aberto).
 - **Nenhum sinal é acusação**: todos os três algoritmos de detecção, e as duas
   camadas de IA, existem pra apontar "olha aqui, isso é incomum" — a conclusão
   de se é irregular ou não é sempre de quem lê os dados brutos, nunca do

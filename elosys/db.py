@@ -31,6 +31,7 @@ def create_schema(path: str | Path) -> None:
 
 _ADDED_COLUMNS: dict[str, list[tuple[str, str]]] = {
     "signal": [("amount_cents", "INTEGER"), ("path_length", "INTEGER")],
+    "senate_vote": [("informe_text", "TEXT")],
 }
 
 

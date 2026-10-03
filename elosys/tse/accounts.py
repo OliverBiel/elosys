@@ -49,7 +49,8 @@ SOURCE = dict(
 
 csv.field_size_limit(1 << 24)
 
-# Children before parents: reset_source deletes in order with foreign_keys=ON.
+# Children before parents: reset_source empties these in order with foreign_keys=ON (only the
+# source's parse/collection rows go with FKs off, after a check that no other table uses them).
 _OWNED_TABLES = ["campaign_donation", "campaign_expense_payment", "campaign_expense", "campaign_org"]
 _LEDGER_FLUSH_EVERY = 200_000
 

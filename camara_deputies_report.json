@@ -1,0 +1,42 @@
+{
+  "legislatures": [
+    56,
+    57
+  ],
+  "years_ignored": null,
+  "deputies": 929,
+  "deputies_per_legislature": {
+    "56": 613,
+    "57": 648
+  },
+  "matched": {
+    "cpf+nascimento": 929,
+    "cpf+nome": 0
+  },
+  "unmatched": {
+    "no_cpf": 0,
+    "cpf_invalid": 0,
+    "cpf_untrusted": 0,
+    "cpf_not_in_people": 0,
+    "cpf_ambiguous": 0,
+    "cpf_match_but_birth_and_name_differ": 0
+  },
+  "unmatched_list": [],
+  "terms": 4786,
+  "terms_per_legislature": {
+    "56": 2549,
+    "57": 2237
+  },
+  "terms_in_office": 2431,
+  "deputies_without_terms": 0,
+  "terms_exercising_at_end_of_finished_legislature": 0,
+  "skipped_artefact_rows": 1273,
+  "skipped_pre_legislature_rows": 22,
+  "skipped_other_legislature_rows": 3355,
+  "collapsed_same_timestamp_rows": 38,
+  "seat_check": {
+    "sample_instants": 92,
+    "max_in_office": 513,
+    "violations": []
+  }
+}

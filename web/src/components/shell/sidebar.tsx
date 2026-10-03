@@ -25,6 +25,13 @@ export function Sidebar({ counts }: { counts: SidebarCounts }) {
     { href: "/sinais/discurso", label: "Discurso em rede social", count: counts.discourse, alert: true },
   ];
 
+  const votacoes: NavLink[] = [
+    { href: "/votacoes", label: "Votações" },
+    { href: "/votacoes/partidos", label: "Partidos" },
+    { href: "/votacoes/comparar", label: "Comparar" },
+    { href: "/votacoes/parlamentares?uf=DF", label: "Parlamentares" },
+  ];
+
   return (
     <aside className="app-sidebar">
       <div className="app-sidebar__top">
@@ -51,19 +58,37 @@ export function Sidebar({ counts }: { counts: SidebarCounts }) {
             </Link>
           ))}
         </div>
+        <NavGroup title="Votações" links={votacoes} pathname={pathname} />
         <NavGroup title="Sinais" links={sinais} pathname={pathname} />
       </nav>
     </aside>
   );
 }
 
+// Active = the link whose path (query string ignored) is the longest prefix of the current path,
+// so /votacoes/parlamentares/camara/1 lights "Parlamentares" and not "Votações".
+function activeHref(links: NavLink[], pathname: string): string | null {
+  let best: string | null = null;
+  let bestLen = -1;
+  for (const l of links) {
+    const path = l.href.split("?")[0];
+    const hit = pathname === path || pathname.startsWith(`${path}/`);
+    if (hit && path.length > bestLen) {
+      best = l.href;
+      bestLen = path.length;
+    }
+  }
+  return best;
+}
+
 function NavGroup({ title, links, pathname }: { title: string; links: NavLink[]; pathname: string }) {
+  const active = activeHref(links, pathname);
   return (
     <div className="app-sidebar__group">
       <div className="label">{title}</div>
       <div className="navmenu__items">
         {links.map((l) => (
-          <Link key={l.href} href={l.href} className={`navitem${pathname === l.href ? " is-active" : ""}`}>
+          <Link key={l.href} href={l.href} className={`navitem${active === l.href ? " is-active" : ""}`}>
             {l.label}
             {l.count != null ? (
               <span className={`navitem__count${l.alert && l.count > 0 ? " navitem__count--alert" : ""}`}>

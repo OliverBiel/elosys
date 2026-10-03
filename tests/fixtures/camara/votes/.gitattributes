@@ -1,0 +1,2 @@
+# Real-format bulk CSVs: CRLF inside quoted fields must survive checkout byte for byte.
+*.csv -text
